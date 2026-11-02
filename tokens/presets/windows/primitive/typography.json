@@ -1,0 +1,145 @@
+{
+  "font": {
+    "family": {
+      "$description": "Font stacks. Apps load the fonts; the stacks only name them.",
+      "$type": "fontFamily",
+      "sans": {
+        "$value": [
+          "Segoe UI Variable Text",
+          "Segoe UI Variable",
+          "Segoe UI",
+          "system-ui",
+          "-apple-system",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif"
+        ]
+      },
+      "display": {
+        "$value": [
+          "Segoe UI Variable Display",
+          "Segoe UI Variable",
+          "Segoe UI",
+          "system-ui",
+          "-apple-system",
+          "sans-serif"
+        ]
+      },
+      "mono": {
+        "$value": [
+          "Cascadia Mono",
+          "Cascadia Code",
+          "Consolas",
+          "ui-monospace",
+          "Menlo",
+          "monospace"
+        ]
+      }
+    },
+    "size": {
+      "$description": "Type ramp sizes.",
+      "$type": "dimension",
+      "caption": {
+        "$value": {
+          "value": 0.75,
+          "unit": "rem"
+        }
+      },
+      "body": {
+        "$value": {
+          "value": 0.875,
+          "unit": "rem"
+        }
+      },
+      "body-large": {
+        "$value": {
+          "value": 1.125,
+          "unit": "rem"
+        }
+      },
+      "subtitle": {
+        "$value": {
+          "value": 1.25,
+          "unit": "rem"
+        }
+      },
+      "title": {
+        "$value": {
+          "value": 1.75,
+          "unit": "rem"
+        }
+      },
+      "title-large": {
+        "$value": {
+          "value": 2.5,
+          "unit": "rem"
+        }
+      },
+      "display": {
+        "$value": {
+          "value": 4.25,
+          "unit": "rem"
+        }
+      }
+    },
+    "line": {
+      "$description": "Line heights paired with the type ramp sizes.",
+      "$type": "dimension",
+      "caption": {
+        "$value": {
+          "value": 1,
+          "unit": "rem"
+        }
+      },
+      "body": {
+        "$value": {
+          "value": 1.25,
+          "unit": "rem"
+        }
+      },
+      "body-large": {
+        "$value": {
+          "value": 1.5,
+          "unit": "rem"
+        }
+      },
+      "subtitle": {
+        "$value": {
+          "value": 1.75,
+          "unit": "rem"
+        }
+      },
+      "title": {
+        "$value": {
+          "value": 2.25,
+          "unit": "rem"
+        }
+      },
+      "title-large": {
+        "$value": {
+          "value": 3.25,
+          "unit": "rem"
+        }
+      },
+      "display": {
+        "$value": {
+          "value": 5.75,
+          "unit": "rem"
+        }
+      }
+    },
+    "weight": {
+      "$description": "Font weights, numeric.",
+      "$type": "fontWeight",
+      "regular": {
+        "$value": 400
+      },
+      "semibold": {
+        "$value": 600
+      },
+      "bold": {
+        "$value": 700
+      }
+    }
+  }
+}

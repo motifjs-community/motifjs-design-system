@@ -1,0 +1,77 @@
+{
+  "name": "mx-fluent",
+  "version": "2025-10-25",
+  "description": "The Fluent language of @motifx-community/design-system, generated from the WinUI 3 theme resources (not affiliated with or endorsed by Microsoft): the shared primitives, its scales, its light and dark themes and its densities. Same token names as the default language (mx.resolver.json), different values. Design Tokens Resolver Module 2025.10.",
+  "sets": {
+    "primitive": {
+      "description": "Shared palette and scales, the same in every design language.",
+      "sources": [
+        {
+          "$ref": "primitive/color.json"
+        },
+        {
+          "$ref": "primitive/dimension.json"
+        },
+        {
+          "$ref": "primitive/layer.json"
+        }
+      ]
+    },
+    "identity": {
+      "description": "Fluent corner radii (ControlCornerRadius, OverlayCornerRadius), elevation, type (Segoe UI Variable) and motion.",
+      "sources": [
+        {
+          "$ref": "identity/fluent/base.json"
+        }
+      ]
+    }
+  },
+  "modifiers": {
+    "theme": {
+      "description": "Semantic colors and the focus ring, light and dark, from the WinUI theme dictionaries.",
+      "contexts": {
+        "light": [
+          {
+            "$ref": "identity/fluent/light.json"
+          }
+        ],
+        "dark": [
+          {
+            "$ref": "identity/fluent/dark.json"
+          }
+        ]
+      },
+      "default": "light"
+    },
+    "density": {
+      "description": "Control heights, paddings, gaps and the pressable feel.",
+      "contexts": {
+        "comfortable": [
+          {
+            "$ref": "identity/fluent/density/comfortable.json"
+          }
+        ],
+        "compact": [
+          {
+            "$ref": "identity/fluent/density/compact.json"
+          }
+        ]
+      },
+      "default": "comfortable"
+    }
+  },
+  "resolutionOrder": [
+    {
+      "$ref": "#/sets/primitive"
+    },
+    {
+      "$ref": "#/sets/identity"
+    },
+    {
+      "$ref": "#/modifiers/theme"
+    },
+    {
+      "$ref": "#/modifiers/density"
+    }
+  ]
+}

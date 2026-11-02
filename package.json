@@ -1,0 +1,105 @@
+{
+  "name": "@motifx-community/design-system",
+  "version": "0.1.0-beta.0",
+  "description": "Design tokens, themes and base styles for MotifJS (@motifx/core) component libraries and apps",
+  "keywords": [
+    "motifjs",
+    "motifx",
+    "motif",
+    "ui",
+    "design-tokens",
+    "design-system",
+    "themes",
+    "dtcg",
+    "css-variables"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/motifjs-community/motifjs-design-system"
+  },
+  "homepage": "https://motifjs.com/docs/design-system",
+  "bugs": {
+    "url": "https://github.com/motifjs-community/motifjs-design-system/issues"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "./dist/js/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/js/index.d.ts",
+      "import": "./dist/js/index.js"
+    },
+    "./styles.css": "./dist/css/styles.css",
+    "./fonts.css": "./dist/css/fonts.css",
+    "./fonts/*": "./dist/css/fonts/*",
+    "./tokens.css": "./dist/css/tokens.css",
+    "./reset.css": "./dist/css/reset.css",
+    "./base.css": "./dist/css/base.css",
+    "./preferences.css": "./dist/css/preferences.css",
+    "./themes/*.css": "./dist/css/themes/*.css",
+    "./identities/*.css": "./dist/css/identities/*.css",
+    "./json/*": "./dist/json/*",
+    "./tokens/*": "./tokens/*",
+    "./stylelint": "./stylelint.config.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "tokens",
+    "stylelint.config.mjs",
+    "llms.txt",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "npm run build && vite examples/basic --port 4600",
+    "build:tokens": "node build/build.mjs",
+    "contrast": "node build/contrast.mjs",
+    "build:js": "tsc -p tsconfig.build.json",
+    "build:css": "node build/css.mjs",
+    "build": "npm run build:tokens && npm run contrast && npm run build:js && npm run build:css",
+    "example:build": "vite build examples/basic",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint:css": "stylelint \"src/css/*.css\"",
+    "e2e": "node e2e/smoke.mjs",
+    "check": "npm run build:tokens && npm run typecheck && npm run lint:css && npm test && npm run build && npm run example:build",
+    "prepublishOnly": "npm run check"
+  },
+  "devDependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/google-sans-code": "^5.3.2",
+    "@fontsource-variable/google-sans-flex": "^5.3.2",
+    "@fontsource-variable/nunito-sans": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@types/node": "^24.19.1",
+    "jsdom": "^30.1.2",
+    "style-dictionary": "^5.6.1",
+    "stylelint": "^17.16.0",
+    "stylelint-declaration-strict-value": "^1.12.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2",
+    "vitest": "^5.0.4"
+  },
+  "peerDependencies": {
+    "stylelint": ">=16"
+  },
+  "peerDependenciesMeta": {
+    "stylelint": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "beta"
+  }
+}

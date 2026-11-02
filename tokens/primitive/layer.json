@@ -1,0 +1,28 @@
+{
+  "opacity": {
+    "$description": "Opacity steps.",
+    "$type": "number",
+    "disabled": {
+      "$value": 0.5
+    }
+  },
+  "z": {
+    "$description": "Stacking layers for floating UI.",
+    "$type": "number",
+    "dropdown": {
+      "$value": 1000
+    },
+    "sticky": {
+      "$value": 1100
+    },
+    "window": {
+      "$value": 1200
+    },
+    "overlay": {
+      "$value": 1300
+    },
+    "toast": {
+      "$value": 1400
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "control": {
+    "$description": "Control sizes for the compact density.",
+    "height": {
+      "$type": "dimension",
+      "sm": {
+        "$value": {
+          "value": 1.25,
+          "unit": "rem"
+        }
+      },
+      "md": {
+        "$value": {
+          "value": 1.5,
+          "unit": "rem"
+        }
+      },
+      "lg": {
+        "$value": {
+          "value": 2,
+          "unit": "rem"
+        }
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "sm": {
+        "$value": {
+          "value": 0.375,
+          "unit": "rem"
+        }
+      },
+      "md": {
+        "$value": {
+          "value": 0.5,
+          "unit": "rem"
+        }
+      },
+      "lg": {
+        "$value": {
+          "value": 0.75,
+          "unit": "rem"
+        }
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0.25,
+        "unit": "rem"
+      }
+    },
+    "edge": {
+      "$type": "dimension",
+      "width": {
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        }
+      }
+    },
+    "press": {
+      "$type": "dimension",
+      "offset": {
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    }
+  },
+  "bar": {
+    "$description": "App bar sizes (menubar, toolbar, status bar) for the compact density.",
+    "$type": "dimension",
+    "height": {
+      "$value": {
+        "value": 1.75,
+        "unit": "rem"
+      }
+    }
+  }
+}

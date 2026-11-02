@@ -1,0 +1,42 @@
+{
+  "name": "mx-lounge",
+  "version": "2025-10-25",
+  "description": "The Lounge design language of @motifx-community/design-system: the shared primitives, Lounge's own scales, its dark theme and its densities. Same token names as the default language (mx.resolver.json), different values. Design Tokens Resolver Module 2025.10.",
+  "sets": {
+    "primitive": {
+      "description": "Shared palette and scales, the same in every design language.",
+      "sources": [
+        { "$ref": "primitive/color.json" },
+        { "$ref": "primitive/dimension.json" },
+        { "$ref": "primitive/layer.json" }
+      ]
+    },
+    "identity": {
+      "description": "Lounge's corner radii, shadows, type and motion.",
+      "sources": [{ "$ref": "identity/lounge/base.json" }]
+    }
+  },
+  "modifiers": {
+    "theme": {
+      "description": "Semantic colors and the focus ring. Lounge ships a dark theme only.",
+      "contexts": {
+        "dark": [{ "$ref": "identity/lounge/dark.json" }]
+      },
+      "default": "dark"
+    },
+    "density": {
+      "description": "Control heights, paddings, gaps and the pressable feel.",
+      "contexts": {
+        "comfortable": [{ "$ref": "identity/lounge/density/comfortable.json" }],
+        "compact": [{ "$ref": "identity/lounge/density/compact.json" }]
+      },
+      "default": "comfortable"
+    }
+  },
+  "resolutionOrder": [
+    { "$ref": "#/sets/primitive" },
+    { "$ref": "#/sets/identity" },
+    { "$ref": "#/modifiers/theme" },
+    { "$ref": "#/modifiers/density" }
+  ]
+}

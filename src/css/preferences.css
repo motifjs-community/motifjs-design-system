@@ -1,0 +1,115 @@
+/* User preferences, applied by rewriting tokens so every component follows
+   without code of its own. Same layer as the tokens, loaded after them. */
+@layer mx.tokens {
+  /* Reduced motion: every duration becomes zero. Transitions written against
+     the motion tokens stop in one place. */
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --mx-motion-duration-instant: 0ms;
+      --mx-motion-duration-fast: 0ms;
+      --mx-motion-duration-normal: 0ms;
+      --mx-motion-duration-slow: 0ms;
+    }
+  }
+
+  /* Reduced transparency: the glass surface and any translucent fill become
+     the opaque surfaces of the same theme. */
+  @media (prefers-reduced-transparency: reduce) {
+    :root,
+    [data-theme],
+    [data-identity] {
+      --mx-color-bg-glass: var(--mx-color-bg-surface);
+      --mx-color-fill-control-default: var(--mx-color-bg-surface);
+      --mx-color-fill-control-secondary: var(--mx-color-bg-card);
+      --mx-color-fill-control-tertiary: var(--mx-color-bg-layer);
+      --mx-color-fill-control-disabled: var(--mx-color-bg-layer);
+      --mx-color-fill-subtle-secondary: var(--mx-color-bg-layer);
+      --mx-color-fill-subtle-tertiary: var(--mx-color-bg-card);
+      --mx-color-fill-control-alt-default: var(--mx-color-bg-surface);
+      --mx-color-fill-control-alt-secondary: var(--mx-color-bg-card);
+      --mx-color-fill-control-alt-tertiary: var(--mx-color-bg-layer);
+      --mx-color-fill-control-alt-disabled: var(--mx-color-bg-layer);
+      --mx-color-fill-input-disabled: var(--mx-color-bg-layer);
+    }
+  }
+
+  /* Forced colors (Windows high contrast themes): the semantic colors map to
+     the user's system palette. Browsers already force most properties; the
+     mapping matters where a component opts out (`forced-color-adjust: none`)
+     or draws itself, as a canvas or SVG library reading the tokens does. */
+  @media (forced-colors: active) {
+    :root,
+    [data-theme],
+    [data-identity] {
+      --mx-color-bg-canvas: Canvas;
+      --mx-color-bg-layer: Canvas;
+      --mx-color-bg-card: Canvas;
+      --mx-color-bg-surface: Canvas;
+      --mx-color-bg-bar: Canvas;
+      --mx-color-bg-container: Canvas;
+      --mx-color-bg-container-high: Canvas;
+      --mx-color-bg-header: Canvas;
+      --mx-color-bg-group: Canvas;
+      --mx-color-bg-glass: Canvas;
+      --mx-color-bg-smoke: Canvas;
+      --mx-color-fill-control-default: ButtonFace;
+      --mx-color-fill-control-secondary: ButtonFace;
+      --mx-color-fill-control-tertiary: ButtonFace;
+      --mx-color-fill-control-disabled: ButtonFace;
+      --mx-color-fill-control-solid: ButtonFace;
+      --mx-color-fill-neutral: ButtonFace;
+      --mx-color-fill-control-alt-default: ButtonFace;
+      --mx-color-fill-control-alt-secondary: ButtonFace;
+      --mx-color-fill-control-alt-tertiary: ButtonFace;
+      --mx-color-fill-control-alt-disabled: ButtonFace;
+      --mx-color-fill-input-focus: Field;
+      --mx-color-fill-input-disabled: Field;
+      --mx-color-fill-subtle-secondary: Canvas;
+      --mx-color-fill-subtle-tertiary: Canvas;
+      --mx-color-fill-accent-disabled: Canvas;
+      --mx-color-fg-primary: CanvasText;
+      --mx-color-fg-secondary: CanvasText;
+      --mx-color-fg-tertiary: GrayText;
+      --mx-color-fg-disabled: GrayText;
+      --mx-color-fg-on-accent-disabled: GrayText;
+      --mx-color-stroke-control-default: ButtonBorder;
+      --mx-color-stroke-control-secondary: ButtonBorder;
+      --mx-color-stroke-control-strong: CanvasText;
+      --mx-color-stroke-control-edge: ButtonBorder;
+      --mx-color-stroke-on-accent-bottom: ButtonBorder;
+      --mx-color-stroke-card: CanvasText;
+      --mx-color-stroke-surface: CanvasText;
+      --mx-color-stroke-divider: CanvasText;
+      --mx-color-highlight-control: Canvas;
+      --mx-color-accent-solid: Highlight;
+      --mx-color-accent-solid-hover: Highlight;
+      --mx-color-accent-solid-pressed: Highlight;
+      --mx-color-accent-on-solid: HighlightText;
+      --mx-color-accent-fg: LinkText;
+      --mx-color-accent-subtle: Canvas;
+      --mx-color-accent-on-subtle: CanvasText;
+      --mx-color-danger-solid: CanvasText;
+      --mx-color-danger-solid-hover: CanvasText;
+      --mx-color-danger-on-solid: Canvas;
+      --mx-color-danger-fg: CanvasText;
+      --mx-color-danger-subtle: Canvas;
+      --mx-color-success-solid: CanvasText;
+      --mx-color-success-on-solid: Canvas;
+      --mx-color-success-fg: CanvasText;
+      --mx-color-success-subtle: Canvas;
+      --mx-color-caution-solid: CanvasText;
+      --mx-color-caution-on-solid: Canvas;
+      --mx-color-caution-fg: CanvasText;
+      --mx-color-caution-subtle: Canvas;
+      --mx-color-info-solid: CanvasText;
+      --mx-color-info-on-solid: Canvas;
+      --mx-color-info-subtle: Canvas;
+      --mx-color-selection-bg: SelectedItem;
+      --mx-color-selection-fg: SelectedItemText;
+      --mx-color-selection-border: SelectedItem;
+      --mx-color-selection-indicator: SelectedItemText;
+      --mx-focus-ring-color: CanvasText;
+      --mx-focus-ring-inner: Canvas;
+    }
+  }
+}

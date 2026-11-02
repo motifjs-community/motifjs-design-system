@@ -1,0 +1,3 @@
+/* Cascade order for everything this package and the kits built on it ship.
+   Un-layered CSS written by an app always wins over all three. */
+@layer mx.reset, mx.tokens, mx.base;

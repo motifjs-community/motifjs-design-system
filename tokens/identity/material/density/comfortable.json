@@ -1,0 +1,82 @@
+{
+  "control": {
+    "$description": "Control sizes for the comfortable density.",
+    "height": {
+      "$type": "dimension",
+      "sm": {
+        "$value": {
+          "value": 2,
+          "unit": "rem"
+        }
+      },
+      "md": {
+        "$value": {
+          "value": 2.5,
+          "unit": "rem"
+        }
+      },
+      "lg": {
+        "$value": {
+          "value": 3.5,
+          "unit": "rem"
+        }
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "sm": {
+        "$value": {
+          "value": 0.75,
+          "unit": "rem"
+        }
+      },
+      "md": {
+        "$value": {
+          "value": 1,
+          "unit": "rem"
+        }
+      },
+      "lg": {
+        "$value": {
+          "value": 1.5,
+          "unit": "rem"
+        }
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0.5,
+        "unit": "rem"
+      }
+    },
+    "edge": {
+      "$type": "dimension",
+      "width": {
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "press": {
+      "$type": "dimension",
+      "offset": {
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    }
+  },
+  "bar": {
+    "$description": "App bar sizes (menubar, toolbar, status bar) for the comfortable density.",
+    "$type": "dimension",
+    "height": {
+      "$value": {
+        "value": 4,
+        "unit": "rem"
+      }
+    }
+  }
+}

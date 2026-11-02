@@ -1,0 +1,37 @@
+/* A small reset in its own layer: any un-layered rule overrides it. */
+@layer mx.reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  :where(html) {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  :where(body) {
+    margin: 0;
+    min-block-size: 100dvh;
+  }
+
+  :where(img, svg, video, canvas, picture) {
+    display: block;
+    max-inline-size: 100%;
+  }
+
+  :where(button, input, select, textarea) {
+    font: inherit;
+    color: inherit;
+  }
+
+  :where(p, h1, h2, h3, h4, h5, h6) {
+    overflow-wrap: break-word;
+  }
+
+  /* `hidden` always hides, even when a class sets a display. */
+  :where([hidden]) {
+    display: none !important;
+  }
+}

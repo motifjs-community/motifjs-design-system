@@ -1,0 +1,688 @@
+{
+  "radius": {
+    "$description": "Corner radii. xs is for small marks such as a check box, which must stay square at any size.",
+    "$type": "dimension",
+    "none": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "xs": {
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      }
+    },
+    "sm": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "md": {
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      }
+    },
+    "lg": {
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "full": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      }
+    }
+  },
+  "shadow": {
+    "2": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2471,
+              0.0902,
+              0.4627
+            ],
+            "alpha": 0.06
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 1,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 2,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2471,
+              0.0902,
+              0.4627
+            ],
+            "alpha": 0.05
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 1,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 3,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    "4": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2471,
+              0.0902,
+              0.4627
+            ],
+            "alpha": 0.06
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 1,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 2,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2471,
+              0.0902,
+              0.4627
+            ],
+            "alpha": 0.08
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 2,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 6,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    "8": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2471,
+              0.0902,
+              0.4627
+            ],
+            "alpha": 0.06
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 1,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 3,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2471,
+              0.0902,
+              0.4627
+            ],
+            "alpha": 0.09
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 4,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 12,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    "16": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2471,
+              0.0902,
+              0.4627
+            ],
+            "alpha": 0.06
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 2,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 4,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2471,
+              0.0902,
+              0.4627
+            ],
+            "alpha": 0.1
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 8,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 24,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    "28": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2471,
+              0.0902,
+              0.4627
+            ],
+            "alpha": 0.06
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 4,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 8,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2471,
+              0.0902,
+              0.4627
+            ],
+            "alpha": 0.12
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 14,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 36,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    "64": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2471,
+              0.0902,
+              0.4627
+            ],
+            "alpha": 0.08
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 8,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 16,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2471,
+              0.0902,
+              0.4627
+            ],
+            "alpha": 0.16
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 32,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 72,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    "$description": "Elevation: soft, wide shadows with a faint lilac tint, two layers each (a close contact shadow and a wide ambient one).",
+    "$type": "shadow"
+  },
+  "elevation": {
+    "$description": "The shadow level of each kind of surface: a card on the page, a popup (menus, drop-down lists), a tooltip, a toast, a window, a window that is not active, and a modal dialog.",
+    "$type": "shadow",
+    "card": {
+      "$value": "{shadow.2}"
+    },
+    "popup": {
+      "$value": "{shadow.16}"
+    },
+    "tooltip": {
+      "$value": "{shadow.8}"
+    },
+    "toast": {
+      "$value": "{shadow.16}"
+    },
+    "window": {
+      "$value": "{shadow.28}"
+    },
+    "window-inactive": {
+      "$value": "{shadow.8}"
+    },
+    "dialog": {
+      "$value": "{shadow.64}"
+    }
+  },
+  "font": {
+    "family": {
+      "$description": "Font stacks. Nunito Sans (variable: weight 200–1000, width 75–125%) for text and Fraunces (variable: weight and softness) for headings ship with the package in fonts.css; JetBrains Mono for code.",
+      "$type": "fontFamily",
+      "sans": {
+        "$value": [
+          "Nunito Sans",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif"
+        ]
+      },
+      "display": {
+        "$value": [
+          "Fraunces",
+          "Georgia",
+          "Times New Roman",
+          "serif"
+        ]
+      },
+      "mono": {
+        "$value": [
+          "JetBrains Mono",
+          "Cascadia Mono",
+          "Consolas",
+          "ui-monospace",
+          "Menlo",
+          "monospace"
+        ]
+      }
+    },
+    "size": {
+      "$description": "Type ramp sizes.",
+      "$type": "dimension",
+      "caption": {
+        "$value": {
+          "value": 0.8125,
+          "unit": "rem"
+        }
+      },
+      "body": {
+        "$value": {
+          "value": 0.9375,
+          "unit": "rem"
+        }
+      },
+      "body-large": {
+        "$value": {
+          "value": 1.0625,
+          "unit": "rem"
+        }
+      },
+      "subtitle": {
+        "$value": {
+          "value": 1.25,
+          "unit": "rem"
+        }
+      },
+      "title": {
+        "$value": {
+          "value": 1.75,
+          "unit": "rem"
+        }
+      },
+      "title-large": {
+        "$value": {
+          "value": 2.5,
+          "unit": "rem"
+        }
+      },
+      "display": {
+        "$value": {
+          "value": 3.75,
+          "unit": "rem"
+        }
+      }
+    },
+    "line": {
+      "$description": "Line heights paired with the type ramp sizes.",
+      "$type": "dimension",
+      "caption": {
+        "$value": {
+          "value": 1.125,
+          "unit": "rem"
+        }
+      },
+      "body": {
+        "$value": {
+          "value": 1.375,
+          "unit": "rem"
+        }
+      },
+      "body-large": {
+        "$value": {
+          "value": 1.625,
+          "unit": "rem"
+        }
+      },
+      "subtitle": {
+        "$value": {
+          "value": 1.75,
+          "unit": "rem"
+        }
+      },
+      "title": {
+        "$value": {
+          "value": 2.25,
+          "unit": "rem"
+        }
+      },
+      "title-large": {
+        "$value": {
+          "value": 3.125,
+          "unit": "rem"
+        }
+      },
+      "display": {
+        "$value": {
+          "value": 4.5,
+          "unit": "rem"
+        }
+      }
+    },
+    "weight": {
+      "$description": "Font weights, numeric. Components use regular and medium; semibold and bold are for display sizes.",
+      "$type": "fontWeight",
+      "regular": {
+        "$value": 400
+      },
+      "medium": {
+        "$value": 500
+      },
+      "semibold": {
+        "$value": 600
+      },
+      "bold": {
+        "$value": 700
+      }
+    },
+    "width": {
+      "$description": "Width-axis values of the variable sans, in percent; base.css applies them with font-stretch.",
+      "$type": "number",
+      "display": {
+        "$value": 100
+      },
+      "body": {
+        "$value": 100
+      },
+      "dense": {
+        "$value": 96
+      }
+    }
+  },
+  "motion": {
+    "duration": {
+      "$description": "Motion durations. Reduced motion zeroes them in preferences.css.",
+      "$type": "duration",
+      "instant": {
+        "$value": {
+          "value": 0,
+          "unit": "ms"
+        }
+      },
+      "fast": {
+        "$value": {
+          "value": 140,
+          "unit": "ms"
+        }
+      },
+      "normal": {
+        "$value": {
+          "value": 240,
+          "unit": "ms"
+        }
+      },
+      "slow": {
+        "$value": {
+          "value": 360,
+          "unit": "ms"
+        }
+      }
+    },
+    "easing": {
+      "$description": "Easing curves.",
+      "$type": "cubicBezier",
+      "standard": {
+        "$value": [
+          0.2,
+          0,
+          0,
+          1
+        ]
+      },
+      "in": {
+        "$value": [
+          0.3,
+          0,
+          1,
+          1
+        ]
+      },
+      "out": {
+        "$value": [
+          0.16,
+          1,
+          0.3,
+          1
+        ]
+      }
+    }
+  },
+  "scrollbar": {
+    "$description": "Scrollbars. size is the thickness of the bar where the browser lets a page set it (Chromium and Safari); Firefox draws its own thin bar.",
+    "$type": "dimension",
+    "size": {
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    }
+  },
+  "indicator": {
+    "$description": "The mark of the selected or current item in a list, a tree or a navigation menu: a short bar at the start, centered on the item. thickness 0 draws no bar (the language marks a selection with the item fill instead).",
+    "$type": "dimension",
+    "thickness": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "length": {
+      "$value": {
+        "value": 0,
+        "unit": "rem"
+      }
+    },
+    "radius": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    }
+  },
+  "selection": {
+    "$description": "The frame of the selected or current item: its width (its color is color.selection.border).",
+    "$type": "dimension",
+    "border-width": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    }
+  },
+  "item": {
+    "$description": "The shape of an item in a list, a tree or a navigation menu, the same in every state (rest, hover, active, selected).",
+    "$type": "dimension",
+    "radius": {
+      "$value": "{radius.md}"
+    }
+  }
+}

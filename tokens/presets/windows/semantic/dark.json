@@ -1,0 +1,328 @@
+{
+  "color": {
+    "$type": "color",
+    "bg": {
+      "canvas": {
+        "$value": "{color.gray.12}"
+      },
+      "layer": {
+        "$value": "{color.gray.16}"
+      },
+      "card": {
+        "$value": "{color.gray.17}"
+      },
+      "surface": {
+        "$value": "{color.gray.17}"
+      },
+      "smoke": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.3
+        }
+      },
+      "$description": "Backgrounds; semantic colors for the dark theme. Components read these, not the palette."
+    },
+    "fill": {
+      "control": {
+        "default": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0605
+          }
+        },
+        "secondary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0837
+          }
+        },
+        "tertiary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0326
+          }
+        },
+        "disabled": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0419
+          }
+        }
+      },
+      "subtle": {
+        "secondary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0605
+          }
+        },
+        "tertiary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0419
+          }
+        }
+      },
+      "accent-disabled": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.1581
+        }
+      },
+      "neutral": {
+        "$value": "{color.fill.control.secondary}"
+      }
+    },
+    "fg": {
+      "primary": {
+        "$value": "{color.white}"
+      },
+      "secondary": {
+        "$value": "{color.gray.81}"
+      },
+      "tertiary": {
+        "$value": "{color.gray.60}"
+      },
+      "disabled": {
+        "$value": "{color.gray.45}"
+      },
+      "on-accent-disabled": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.5302
+        }
+      }
+    },
+    "stroke": {
+      "control": {
+        "default": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0698
+          }
+        },
+        "secondary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.093
+          }
+        },
+        "strong": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.5442
+          }
+        }
+      },
+      "on-accent-bottom": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.14
+        }
+      },
+      "card": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.1
+        }
+      },
+      "surface": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4588,
+            0.4588,
+            0.4588
+          ],
+          "alpha": 0.4
+        }
+      },
+      "divider": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.0837
+        }
+      }
+    },
+    "accent": {
+      "solid": {
+        "$value": "{color.accent.light2}"
+      },
+      "solid-hover": {
+        "$value": "{color.accent.light2-hover}"
+      },
+      "solid-pressed": {
+        "$value": "{color.accent.light2-pressed}"
+      },
+      "on-solid": {
+        "$value": "{color.black}"
+      },
+      "fg": {
+        "$value": "{color.accent.light3}"
+      },
+      "subtle": {
+        "$value": "{color.accent.tint-dark}"
+      }
+    },
+    "danger": {
+      "solid": {
+        "$value": "{color.critical.dark}"
+      },
+      "solid-hover": {
+        "$value": "{color.critical.dark-hover}"
+      },
+      "on-solid": {
+        "$value": "{color.black}"
+      },
+      "fg": {
+        "$value": "{color.critical.dark}"
+      },
+      "subtle": {
+        "$value": "{color.critical.dark-bg}"
+      }
+    },
+    "success": {
+      "fg": {
+        "$value": "{color.success.dark}"
+      },
+      "subtle": {
+        "$value": "{color.success.dark-bg}"
+      },
+      "solid": {
+        "$value": "{color.success.dark}"
+      },
+      "on-solid": {
+        "$value": "{color.black}"
+      }
+    },
+    "caution": {
+      "fg": {
+        "$value": "{color.caution.dark}"
+      },
+      "subtle": {
+        "$value": "{color.caution.dark-bg}"
+      },
+      "solid": {
+        "$value": "{color.caution.dark}"
+      },
+      "on-solid": {
+        "$value": "{color.black}"
+      }
+    },
+    "info": {
+      "solid": {
+        "$value": "{color.fg.secondary}"
+      },
+      "on-solid": {
+        "$value": "{color.bg.canvas}"
+      }
+    }
+  },
+  "focus": {
+    "ring": {
+      "$description": "The one focus visual for everything: outer ring plus inner ring.",
+      "color": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "inner": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.7
+        }
+      },
+      "width": {
+        "$type": "dimension",
+        "$value": "{border.width.2}"
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

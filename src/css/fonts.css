@@ -1,0 +1,203 @@
+/* The faces the design languages use, shipped with the package and loaded by
+   styles.css: Archivo (variable: weight 100–900, width 62–125%) and JetBrains
+   Mono (400, 500) for Tactile and Lounge; Google Sans Flex (variable: weight
+   1–1000, width 25–151%) and Google Sans Code (variable: weight 300–800) for
+   Material; Nunito Sans (variable: weight 200–1000, width 75–125%) and Fraunces
+   (variable: weight 100–900 and softness) for Lilac. Latin and latin-ext subsets, from the Fontsource builds (OFL; see
+   fonts/LICENSE-*.txt). A browser downloads a face only when a page uses it. An app that brings its own faces imports the other
+   entry points without this file and overrides the font family tokens.
+   @font-face descriptors are not layered; the tokens only name these faces. */
+/* stylelint-disable scale-unlimited/declaration-strict-value -- @font-face descriptors name the faces the font family tokens point at */
+
+/* archivo-latin-normal */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url(./fonts/archivo-latin-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* archivo-latin-ext-normal */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url(./fonts/archivo-latin-ext-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* archivo-latin-italic */
+@font-face {
+  font-family: 'Archivo';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url(./fonts/archivo-latin-standard-italic.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* archivo-latin-ext-italic */
+@font-face {
+  font-family: 'Archivo';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  src: url(./fonts/archivo-latin-ext-standard-italic.woff2) format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* jetbrains-mono-latin-400 */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./fonts/jetbrains-mono-latin-400-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* jetbrains-mono-latin-ext-400 */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./fonts/jetbrains-mono-latin-ext-400-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* jetbrains-mono-latin-500 */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(./fonts/jetbrains-mono-latin-500-normal.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* jetbrains-mono-latin-ext-500 */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(./fonts/jetbrains-mono-latin-ext-500-normal.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Material: Google Sans Flex (weight and width axes) and Google Sans Code. */
+
+/* google-sans-flex-latin-ext-wdth-normal */
+@font-face {
+  font-family: 'Google Sans Flex';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 1 1000;
+  font-stretch: 25% 151%;
+  src: url(./fonts/google-sans-flex-latin-ext-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* google-sans-flex-latin-wdth-normal */
+@font-face {
+  font-family: 'Google Sans Flex';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 1 1000;
+  font-stretch: 25% 151%;
+  src: url(./fonts/google-sans-flex-latin-wdth-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* google-sans-code-latin-ext-wght-normal */
+@font-face {
+  font-family: 'Google Sans Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  src: url(./fonts/google-sans-code-latin-ext-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* google-sans-code-latin-wght-normal */
+@font-face {
+  font-family: 'Google Sans Code';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300 800;
+  src: url(./fonts/google-sans-code-latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+/* nunito-sans-latin-normal */
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 1000;
+  font-stretch: 75% 125%;
+  src: url(./fonts/nunito-sans-latin-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* nunito-sans-latin-ext-normal */
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 1000;
+  font-stretch: 75% 125%;
+  src: url(./fonts/nunito-sans-latin-ext-standard-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* nunito-sans-latin-italic */
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200 1000;
+  font-stretch: 75% 125%;
+  src: url(./fonts/nunito-sans-latin-standard-italic.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* nunito-sans-latin-ext-italic */
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200 1000;
+  font-stretch: 75% 125%;
+  src: url(./fonts/nunito-sans-latin-ext-standard-italic.woff2) format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* fraunces-latin-normal */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./fonts/fraunces-latin-soft-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* fraunces-latin-ext-normal */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(./fonts/fraunces-latin-ext-soft-normal.woff2) format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* stylelint-enable scale-unlimited/declaration-strict-value */

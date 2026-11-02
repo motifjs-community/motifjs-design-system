@@ -1,0 +1,415 @@
+{
+  "color": {
+    "$type": "color",
+    "bg": {
+      "canvas": {
+        "$value": "{color.black}"
+      },
+      "layer": {
+        "$value": "{color.black}"
+      },
+      "card": {
+        "$value": "{color.black}"
+      },
+      "surface": {
+        "$value": "{color.black}"
+      },
+      "bar": {
+        "$value": "{color.black}"
+      },
+      "container": {
+        "$value": "{color.bg.surface}"
+      },
+      "container-high": {
+        "$value": "{color.bg.surface}"
+      },
+      "header": {
+        "$value": "{color.bg.layer}"
+      },
+      "group": {
+        "$value": "{color.bg.layer}"
+      },
+      "glass": {
+        "$value": "{color.black}"
+      },
+      "smoke": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.6
+        }
+      },
+      "$description": "Backgrounds; semantic colors for the high-contrast theme. Components read these, not the palette."
+    },
+    "fill": {
+      "control": {
+        "default": {
+          "$value": "{color.black}"
+        },
+        "secondary": {
+          "$value": "{color.black}"
+        },
+        "tertiary": {
+          "$value": "{color.black}"
+        },
+        "disabled": {
+          "$value": "{color.black}"
+        },
+        "solid": {
+          "$value": "{color.fill.control.default}"
+        }
+      },
+      "control-alt": {
+        "$description": "The quieter fill of a check box or radio, at rest, hovered, pressed and disabled.",
+        "default": {
+          "$value": "{color.fill.control.default}"
+        },
+        "secondary": {
+          "$value": "{color.fill.control.secondary}"
+        },
+        "tertiary": {
+          "$value": "{color.fill.control.tertiary}"
+        },
+        "disabled": {
+          "$value": "{color.fill.control.disabled}"
+        }
+      },
+      "input": {
+        "$description": "A text field: focused, and disabled when it is drawn filled.",
+        "focus": {
+          "$value": "{color.fill.control.default}"
+        },
+        "disabled": {
+          "$value": "{color.fill.control.disabled}"
+        }
+      },
+      "subtle": {
+        "secondary": {
+          "$value": "{color.contrast.hover}"
+        },
+        "tertiary": {
+          "$value": "{color.contrast.pressed}"
+        }
+      },
+      "accent-disabled": {
+        "$value": "{color.black}"
+      },
+      "neutral": {
+        "$value": "{color.fill.control.secondary}"
+      }
+    },
+    "fg": {
+      "primary": {
+        "$value": "{color.contrast.text}"
+      },
+      "secondary": {
+        "$value": "{color.contrast.text-muted}"
+      },
+      "tertiary": {
+        "$value": "{color.contrast.text-muted}"
+      },
+      "disabled": {
+        "$value": "{color.contrast.disabled}"
+      },
+      "on-accent-disabled": {
+        "$value": "{color.contrast.disabled}"
+      }
+    },
+    "stroke": {
+      "control": {
+        "default": {
+          "$value": "{color.contrast.text}"
+        },
+        "secondary": {
+          "$value": "{color.contrast.text}"
+        },
+        "strong": {
+          "$value": "{color.contrast.text}"
+        },
+        "edge": {
+          "$value": "{color.contrast.text}"
+        }
+      },
+      "on-accent-bottom": {
+        "$value": "{color.contrast.text}"
+      },
+      "card": {
+        "$value": "{color.contrast.text}"
+      },
+      "surface": {
+        "$value": "{color.contrast.text}"
+      },
+      "divider": {
+        "$value": "{color.contrast.text}"
+      }
+    },
+    "highlight": {
+      "control": {
+        "$value": "{color.black}"
+      }
+    },
+    "accent": {
+      "solid": {
+        "$value": "{color.contrast.highlight}"
+      },
+      "solid-hover": {
+        "$value": "{color.contrast.highlight-hover}"
+      },
+      "solid-pressed": {
+        "$value": "{color.contrast.highlight}"
+      },
+      "on-solid": {
+        "$value": "{color.black}"
+      },
+      "fg": {
+        "$value": "{color.contrast.link}"
+      },
+      "subtle": {
+        "$value": "{color.black}"
+      },
+      "on-subtle": {
+        "$value": "{color.accent.fg}"
+      }
+    },
+    "danger": {
+      "solid": {
+        "$value": "{color.contrast.critical}"
+      },
+      "solid-hover": {
+        "$value": "{color.contrast.critical-hover}"
+      },
+      "on-solid": {
+        "$value": "{color.black}"
+      },
+      "fg": {
+        "$value": "{color.contrast.critical-text}"
+      },
+      "subtle": {
+        "$value": "{color.black}"
+      }
+    },
+    "success": {
+      "fg": {
+        "$value": "{color.contrast.success}"
+      },
+      "subtle": {
+        "$value": "{color.black}"
+      },
+      "solid": {
+        "$value": "{color.contrast.success}"
+      },
+      "on-solid": {
+        "$value": "{color.black}"
+      }
+    },
+    "caution": {
+      "fg": {
+        "$value": "{color.contrast.caution}"
+      },
+      "subtle": {
+        "$value": "{color.black}"
+      },
+      "solid": {
+        "$value": "{color.contrast.caution}"
+      },
+      "on-solid": {
+        "$value": "{color.black}"
+      }
+    },
+    "info": {
+      "$description": "A neutral notice (information, not success, caution or danger).",
+      "subtle": {
+        "$value": "{color.bg.layer}"
+      },
+      "solid": {
+        "$value": "{color.fg.primary}"
+      },
+      "on-solid": {
+        "$value": "{color.bg.canvas}"
+      }
+    },
+    "selection": {
+      "$description": "The selected or current item of a list, a tree or a navigation menu: its fill, its text, its frame and its mark.",
+      "bg": {
+        "$value": "{color.accent.solid}"
+      },
+      "fg": {
+        "$value": "{color.accent.on-solid}"
+      },
+      "border": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0
+        }
+      },
+      "indicator": {
+        "$value": "{color.accent.on-solid}"
+      }
+    }
+  },
+  "focus": {
+    "ring": {
+      "$description": "The one focus visual for everything: outer ring plus inner ring.",
+      "color": {
+        "$type": "color",
+        "$value": "{color.contrast.text}"
+      },
+      "inner": {
+        "$type": "color",
+        "$value": "{color.black}"
+      },
+      "halo": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "hex": "#000000"
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 0,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 1,
+              "unit": "px"
+            }
+          }
+        ]
+      },
+      "halo-inset": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "hex": "#000000"
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 0,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 3,
+              "unit": "px"
+            },
+            "inset": true
+          }
+        ]
+      },
+      "width": {
+        "$type": "dimension",
+        "$value": "{border.width.2}"
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        }
+      }
+    }
+  },
+  "effect": {
+    "$description": "Surface effects drawn with a frame: the selected or current item's, and a raised control's resting face (none in most languages, a raised key in Tactile).",
+    "$type": "shadow",
+    "selection": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 0,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    "control": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "hex": "#000000"
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 1,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "inset": true
+        }
+      ]
+    }
+  }
+}

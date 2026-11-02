@@ -1,0 +1,85 @@
+{
+  "name": "mx",
+  "version": "2025-10-25",
+  "description": "How the @motifx-community/design-system token sets combine for the default design language, Tactile: the shared primitives, then its scales, its theme and its density. Every other language has a resolver of its own next to this one (lounge.resolver.json), because its themes and densities are its own files. Design Tokens Resolver Module 2025.10.",
+  "sets": {
+    "primitive": {
+      "description": "Shared palette and scales. Never consumed directly by components; the same in every design language.",
+      "sources": [
+        {
+          "$ref": "primitive/color.json"
+        },
+        {
+          "$ref": "primitive/dimension.json"
+        },
+        {
+          "$ref": "primitive/layer.json"
+        }
+      ]
+    }
+  },
+  "modifiers": {
+    "identity": {
+      "description": "The design language: its corner radii, shadows, type and motion. Same token names in every language, different values.",
+      "contexts": {
+        "tactile": [
+          {
+            "$ref": "identity/tactile/base.json"
+          }
+        ]
+      },
+      "default": "tactile"
+    },
+    "theme": {
+      "description": "Semantic colors and the focus ring per theme, as the chosen language defines them.",
+      "contexts": {
+        "light": [
+          {
+            "$ref": "identity/tactile/light.json"
+          }
+        ],
+        "dark": [
+          {
+            "$ref": "identity/tactile/dark.json"
+          }
+        ],
+        "high-contrast": [
+          {
+            "$ref": "identity/tactile/high-contrast.json"
+          }
+        ]
+      },
+      "default": "light"
+    },
+    "density": {
+      "description": "Control heights, paddings, gaps and the pressable feel, as the chosen language defines them.",
+      "contexts": {
+        "comfortable": [
+          {
+            "$ref": "identity/tactile/density/comfortable.json"
+          }
+        ],
+        "compact": [
+          {
+            "$ref": "identity/tactile/density/compact.json"
+          }
+        ]
+      },
+      "default": "comfortable"
+    }
+  },
+  "resolutionOrder": [
+    {
+      "$ref": "#/sets/primitive"
+    },
+    {
+      "$ref": "#/modifiers/identity"
+    },
+    {
+      "$ref": "#/modifiers/theme"
+    },
+    {
+      "$ref": "#/modifiers/density"
+    }
+  ]
+}

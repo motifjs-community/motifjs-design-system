@@ -1,0 +1,77 @@
+{
+  "name": "mx-lilac",
+  "version": "2025-10-25",
+  "description": "The Lilac language of @motifx-community/design-system: the shared primitives, its scales, its light and dark themes and its densities. Same token names as the default language (mx.resolver.json), different values. Design Tokens Resolver Module 2025.10.",
+  "sets": {
+    "primitive": {
+      "description": "Shared palette and scales, the same in every design language.",
+      "sources": [
+        {
+          "$ref": "primitive/color.json"
+        },
+        {
+          "$ref": "primitive/dimension.json"
+        },
+        {
+          "$ref": "primitive/layer.json"
+        }
+      ]
+    },
+    "identity": {
+      "description": "Lilac corner radii, elevation, type (Nunito Sans, Fraunces) and motion.",
+      "sources": [
+        {
+          "$ref": "identity/lilac/base.json"
+        }
+      ]
+    }
+  },
+  "modifiers": {
+    "theme": {
+      "description": "Semantic colors and the focus ring, light and dark.",
+      "contexts": {
+        "light": [
+          {
+            "$ref": "identity/lilac/light.json"
+          }
+        ],
+        "dark": [
+          {
+            "$ref": "identity/lilac/dark.json"
+          }
+        ]
+      },
+      "default": "light"
+    },
+    "density": {
+      "description": "Control heights, paddings, gaps and the pressable feel.",
+      "contexts": {
+        "comfortable": [
+          {
+            "$ref": "identity/lilac/density/comfortable.json"
+          }
+        ],
+        "compact": [
+          {
+            "$ref": "identity/lilac/density/compact.json"
+          }
+        ]
+      },
+      "default": "comfortable"
+    }
+  },
+  "resolutionOrder": [
+    {
+      "$ref": "#/sets/primitive"
+    },
+    {
+      "$ref": "#/sets/identity"
+    },
+    {
+      "$ref": "#/modifiers/theme"
+    },
+    {
+      "$ref": "#/modifiers/density"
+    }
+  ]
+}

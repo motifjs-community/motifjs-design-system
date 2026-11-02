@@ -1,0 +1,514 @@
+{
+  "color": {
+    "$type": "color",
+    "bg": {
+      "canvas": {
+        "$value": "{color.mauve.6}"
+      },
+      "layer": {
+        "$value": "{color.mauve.10}"
+      },
+      "card": {
+        "$value": "{color.mauve.10}"
+      },
+      "surface": {
+        "$value": "{color.mauve.12}"
+      },
+      "bar": {
+        "$value": "{color.mauve.6}"
+      },
+      "container": {
+        "$value": "{color.mauve.12}"
+      },
+      "container-high": {
+        "$value": "{color.mauve.17}"
+      },
+      "header": {
+        "$value": "{color.bg.layer}"
+      },
+      "group": {
+        "$value": "{color.bg.layer}"
+      },
+      "glass": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1255,
+            0.1216,
+            0.1412
+          ],
+          "alpha": 0.8
+        }
+      },
+      "smoke": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.32
+        }
+      },
+      "$description": "Backgrounds; semantic colors for the Material dark theme. Components read these, not the palette."
+    },
+    "fill": {
+      "control": {
+        "default": {
+          "$value": "{color.mauve.22}"
+        },
+        "secondary": {
+          "$value": "{color.mauve.25}"
+        },
+        "tertiary": {
+          "$value": "{color.mauve.27}"
+        },
+        "disabled": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.902,
+              0.8824,
+              0.9137
+            ],
+            "alpha": 0.12
+          }
+        },
+        "solid": {
+          "$value": "{color.fill.control.default}"
+        }
+      },
+      "control-alt": {
+        "$description": "The quieter fill of a check box or radio, at rest, hovered, pressed and disabled.",
+        "default": {
+          "$value": "{color.fill.control.default}"
+        },
+        "secondary": {
+          "$value": "{color.fill.control.secondary}"
+        },
+        "tertiary": {
+          "$value": "{color.fill.control.tertiary}"
+        },
+        "disabled": {
+          "$value": "{color.fill.control.disabled}"
+        }
+      },
+      "input": {
+        "$description": "A text field: focused, and disabled when it is drawn filled.",
+        "focus": {
+          "$value": "{color.fill.control.default}"
+        },
+        "disabled": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.902,
+              0.8824,
+              0.9137
+            ],
+            "alpha": 0.0392
+          }
+        }
+      },
+      "subtle": {
+        "secondary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.902,
+              0.8824,
+              0.9137
+            ],
+            "alpha": 0.08
+          }
+        },
+        "tertiary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.902,
+              0.8824,
+              0.9137
+            ],
+            "alpha": 0.1
+          }
+        }
+      },
+      "accent-disabled": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.902,
+            0.8824,
+            0.9137
+          ],
+          "alpha": 0.12
+        }
+      },
+      "neutral": {
+        "$value": "{color.fill.control.secondary}"
+      }
+    },
+    "fg": {
+      "primary": {
+        "$value": "{color.mauve.90}"
+      },
+      "secondary": {
+        "$value": "{color.mauve.variant-80}"
+      },
+      "tertiary": {
+        "$value": "{color.mauve.variant-60}"
+      },
+      "disabled": {
+        "$value": "{color.mauve.46}"
+      },
+      "on-accent-disabled": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.902,
+            0.8824,
+            0.9137
+          ],
+          "alpha": 0.38
+        }
+      }
+    },
+    "stroke": {
+      "control": {
+        "default": {
+          "$value": "{color.mauve.variant-30}"
+        },
+        "secondary": {
+          "$value": "{color.mauve.variant-30}"
+        },
+        "strong": {
+          "$value": "{color.mauve.variant-60}"
+        },
+        "edge": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0
+          }
+        }
+      },
+      "on-accent-bottom": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0
+        }
+      },
+      "card": {
+        "$value": "{color.mauve.variant-30}"
+      },
+      "surface": {
+        "$value": "{color.mauve.variant-30}"
+      },
+      "divider": {
+        "$value": "{color.mauve.variant-30}"
+      }
+    },
+    "highlight": {
+      "control": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0
+        }
+      }
+    },
+    "accent": {
+      "solid": {
+        "$value": "{color.violet.60}"
+      },
+      "solid-hover": {
+        "$value": "{color.violet.60-hover}"
+      },
+      "solid-pressed": {
+        "$value": "{color.violet.60-pressed}"
+      },
+      "on-solid": {
+        "$value": "{color.violet.10}"
+      },
+      "fg": {
+        "$value": "{color.violet.60}"
+      },
+      "subtle": {
+        "$value": "{color.violet.18}"
+      },
+      "on-subtle": {
+        "$value": "{color.violet.90}"
+      }
+    },
+    "danger": {
+      "solid": {
+        "$value": "{color.red.80}"
+      },
+      "solid-hover": {
+        "$value": "{color.red.80-hover}"
+      },
+      "on-solid": {
+        "$value": "{color.red.20}"
+      },
+      "fg": {
+        "$value": "{color.red.80}"
+      },
+      "subtle": {
+        "$value": "{color.red.30}"
+      }
+    },
+    "success": {
+      "fg": {
+        "$value": "{color.green.70}"
+      },
+      "subtle": {
+        "$value": "{color.green.18}"
+      },
+      "solid": {
+        "$value": "{color.green.70}"
+      },
+      "on-solid": {
+        "$value": "{color.green.18}"
+      }
+    },
+    "caution": {
+      "fg": {
+        "$value": "{color.yellow.80}"
+      },
+      "subtle": {
+        "$value": "{color.yellow.15}"
+      },
+      "solid": {
+        "$value": "{color.yellow.80}"
+      },
+      "on-solid": {
+        "$value": "{color.yellow.15}"
+      }
+    },
+    "info": {
+      "$description": "A neutral notice (information, not success, caution or danger).",
+      "subtle": {
+        "$value": "{color.bg.layer}"
+      },
+      "solid": {
+        "$value": "{color.fg.secondary}"
+      },
+      "on-solid": {
+        "$value": "{color.bg.canvas}"
+      }
+    },
+    "selection": {
+      "$description": "The selected or current item of a list, a tree or a navigation menu: its fill, its text, its frame and its mark.",
+      "bg": {
+        "$value": "{color.dusk.30}"
+      },
+      "fg": {
+        "$value": "{color.dusk.90}"
+      },
+      "border": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0
+        }
+      },
+      "indicator": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0
+        }
+      }
+    }
+  },
+  "focus": {
+    "ring": {
+      "$description": "The one focus visual for everything: outer ring plus inner ring.",
+      "color": {
+        "$type": "color",
+        "$value": "{color.dusk.80}"
+      },
+      "inner": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0
+        }
+      },
+      "halo": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 0,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 2,
+              "unit": "px"
+            }
+          }
+        ]
+      },
+      "halo-inset": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 0,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 5,
+              "unit": "px"
+            },
+            "inset": true
+          }
+        ]
+      },
+      "width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 3,
+          "unit": "px"
+        }
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        }
+      }
+    }
+  },
+  "effect": {
+    "$description": "Surface effects drawn with a frame: the selected or current item's, and a raised control's resting face (none in most languages, a raised key in Tactile).",
+    "$type": "shadow",
+    "selection": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 0,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    "control": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 1,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "inset": true
+        }
+      ]
+    }
+  }
+}

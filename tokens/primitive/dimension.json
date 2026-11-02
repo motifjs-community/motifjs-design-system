@@ -1,0 +1,114 @@
+{
+  "space": {
+    "0": {
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      }
+    },
+    "1": {
+      "$value": {
+        "value": 0.25,
+        "unit": "rem"
+      }
+    },
+    "2": {
+      "$value": {
+        "value": 0.5,
+        "unit": "rem"
+      }
+    },
+    "3": {
+      "$value": {
+        "value": 0.75,
+        "unit": "rem"
+      }
+    },
+    "4": {
+      "$value": {
+        "value": 1,
+        "unit": "rem"
+      }
+    },
+    "5": {
+      "$value": {
+        "value": 1.25,
+        "unit": "rem"
+      }
+    },
+    "6": {
+      "$value": {
+        "value": 1.5,
+        "unit": "rem"
+      }
+    },
+    "8": {
+      "$value": {
+        "value": 2,
+        "unit": "rem"
+      }
+    },
+    "10": {
+      "$value": {
+        "value": 2.5,
+        "unit": "rem"
+      }
+    },
+    "12": {
+      "$value": {
+        "value": 3,
+        "unit": "rem"
+      }
+    },
+    "16": {
+      "$value": {
+        "value": 4,
+        "unit": "rem"
+      }
+    },
+    "$description": "Spacing scale on a 4px grid, in rem so it follows the user's text size.",
+    "$type": "dimension"
+  },
+  "icon": {
+    "size": {
+      "$description": "Icon sizes: sm for captions and dense rows, md for controls and menus, lg for toolbars and headers.",
+      "$type": "dimension",
+      "sm": {
+        "$value": {
+          "value": 0.75,
+          "unit": "rem"
+        }
+      },
+      "md": {
+        "$value": {
+          "value": 1,
+          "unit": "rem"
+        }
+      },
+      "lg": {
+        "$value": {
+          "value": 1.25,
+          "unit": "rem"
+        }
+      }
+    }
+  },
+  "border": {
+    "width": {
+      "1": {
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        }
+      },
+      "2": {
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        }
+      },
+      "$description": "Border widths.",
+      "$type": "dimension"
+    }
+  }
+}

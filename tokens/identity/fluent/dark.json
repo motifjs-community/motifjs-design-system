@@ -1,0 +1,871 @@
+{
+  "color": {
+    "$type": "color",
+    "bg": {
+      "$description": "Backgrounds; semantic colors for the Fluent dark theme, from WinUI 3's theme resources. Components read these, not the palette.",
+      "canvas": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1255,
+            0.1255,
+            0.1255
+          ],
+          "hex": "#202020"
+        }
+      },
+      "layer": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1569,
+            0.1569,
+            0.1569
+          ],
+          "hex": "#282828"
+        }
+      },
+      "card": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1686,
+            0.1686,
+            0.1686
+          ],
+          "hex": "#2b2b2b"
+        }
+      },
+      "surface": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1725,
+            0.1725,
+            0.1725
+          ],
+          "hex": "#2c2c2c"
+        }
+      },
+      "bar": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1255,
+            0.1255,
+            0.1255
+          ],
+          "hex": "#202020"
+        }
+      },
+      "container": {
+        "$value": "{color.bg.surface}"
+      },
+      "container-high": {
+        "$value": "{color.bg.surface}"
+      },
+      "header": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1765,
+            0.1765,
+            0.1765
+          ],
+          "hex": "#2d2d2d"
+        }
+      },
+      "group": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1529,
+            0.1529,
+            0.1529
+          ],
+          "hex": "#272727"
+        }
+      },
+      "glass": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1725,
+            0.1725,
+            0.1725
+          ],
+          "alpha": 0.9608
+        }
+      },
+      "smoke": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.302
+        }
+      }
+    },
+    "fill": {
+      "control": {
+        "default": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1765,
+              0.1765,
+              0.1765
+            ],
+            "hex": "#2d2d2d"
+          }
+        },
+        "secondary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0824
+          }
+        },
+        "tertiary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0314
+          }
+        },
+        "disabled": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0431
+          }
+        },
+        "solid": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.2706,
+              0.2706,
+              0.2706
+            ],
+            "hex": "#454545"
+          }
+        }
+      },
+      "control-alt": {
+        "$description": "The quieter fill of a check box or radio, at rest, hovered, pressed and disabled.",
+        "default": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.098
+          }
+        },
+        "secondary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0431
+          }
+        },
+        "tertiary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0706
+          }
+        },
+        "disabled": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0
+          }
+        }
+      },
+      "input": {
+        "$description": "A text field: focused, and disabled when it is drawn filled.",
+        "focus": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.1216,
+              0.1216,
+              0.1216
+            ],
+            "hex": "#1f1f1f"
+          }
+        },
+        "disabled": {
+          "$value": "{color.fill.control.disabled}"
+        }
+      },
+      "subtle": {
+        "secondary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0588
+          }
+        },
+        "tertiary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0392
+          }
+        }
+      },
+      "accent-disabled": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.1569
+        }
+      },
+      "neutral": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.251,
+            0.251,
+            0.251
+          ],
+          "hex": "#404040"
+        }
+      }
+    },
+    "fg": {
+      "primary": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "hex": "#ffffff"
+        }
+      },
+      "secondary": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8,
+            0.8,
+            0.8
+          ],
+          "hex": "#cccccc"
+        }
+      },
+      "tertiary": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.5294
+        }
+      },
+      "disabled": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.3647
+        }
+      },
+      "on-accent-disabled": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.5294
+        }
+      }
+    },
+    "stroke": {
+      "control": {
+        "default": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0706
+          }
+        },
+        "secondary": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0941
+          }
+        },
+        "strong": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.5451
+          }
+        },
+        "edge": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0.0941
+          }
+        }
+      },
+      "on-accent-bottom": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.1373
+        }
+      },
+      "card": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.098
+        }
+      },
+      "surface": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4588,
+            0.4588,
+            0.4588
+          ],
+          "alpha": 0.4
+        }
+      },
+      "divider": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0.0824
+        }
+      }
+    },
+    "highlight": {
+      "control": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "alpha": 0
+        }
+      }
+    },
+    "accent": {
+      "solid": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3765,
+            0.8039,
+            1
+          ],
+          "hex": "#60cdff"
+        }
+      },
+      "solid-hover": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3529,
+            0.7373,
+            0.9137
+          ],
+          "hex": "#5abce9"
+        }
+      },
+      "solid-pressed": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3373,
+            0.702,
+            0.8706
+          ],
+          "hex": "#56b3de"
+        }
+      },
+      "on-solid": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "hex": "#000000"
+        }
+      },
+      "fg": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6,
+            0.9216,
+            1
+          ],
+          "hex": "#99ebff"
+        }
+      },
+      "subtle": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1647,
+            0.2275,
+            0.2549
+          ],
+          "hex": "#2a3a41"
+        }
+      },
+      "on-subtle": {
+        "$value": "{color.accent.fg}"
+      }
+    },
+    "danger": {
+      "solid": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            0.6,
+            0.6431
+          ],
+          "hex": "#ff99a4"
+        }
+      },
+      "solid-hover": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9137,
+            0.5529,
+            0.5922
+          ],
+          "hex": "#e98d97"
+        }
+      },
+      "on-solid": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "hex": "#000000"
+        }
+      },
+      "fg": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            0.6,
+            0.6431
+          ],
+          "hex": "#ff99a4"
+        }
+      },
+      "subtle": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2667,
+            0.1529,
+            0.149
+          ],
+          "hex": "#442726"
+        }
+      }
+    },
+    "success": {
+      "fg": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4235,
+            0.7961,
+            0.3725
+          ],
+          "hex": "#6ccb5f"
+        }
+      },
+      "subtle": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2235,
+            0.2392,
+            0.1059
+          ],
+          "hex": "#393d1b"
+        }
+      },
+      "solid": {
+        "$value": "{color.success.fg}"
+      },
+      "on-solid": {
+        "$value": "{color.black}"
+      }
+    },
+    "caution": {
+      "fg": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9882,
+            0.8824,
+            0
+          ],
+          "hex": "#fce100"
+        }
+      },
+      "subtle": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2627,
+            0.2078,
+            0.098
+          ],
+          "hex": "#433519"
+        }
+      },
+      "solid": {
+        "$value": "{color.caution.fg}"
+      },
+      "on-solid": {
+        "$value": "{color.black}"
+      }
+    },
+    "info": {
+      "$description": "A neutral notice (information, not success, caution or danger).",
+      "subtle": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1804,
+            0.1804,
+            0.1804
+          ],
+          "hex": "#2e2e2e"
+        }
+      },
+      "solid": {
+        "$value": "{color.accent.solid}"
+      },
+      "on-solid": {
+        "$value": "{color.accent.on-solid}"
+      }
+    },
+    "selection": {
+      "$description": "The selected or current item of a list, a tree or a navigation menu: its fill, its text, its frame and its mark.",
+      "bg": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2196,
+            0.2196,
+            0.2196
+          ],
+          "hex": "#383838"
+        }
+      },
+      "fg": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "hex": "#ffffff"
+        }
+      },
+      "border": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0
+        }
+      },
+      "indicator": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3765,
+            0.8039,
+            1
+          ],
+          "hex": "#60cdff"
+        }
+      }
+    }
+  },
+  "effect": {
+    "$description": "Surface effects drawn with a frame: the selected or current item's, and a raised control's resting face (none in most languages, a raised key in Tactile).",
+    "$type": "shadow",
+    "selection": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 0,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      ]
+    },
+    "control": {
+      "$value": [
+        {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              1,
+              1
+            ],
+            "alpha": 0
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 1,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          },
+          "inset": true
+        }
+      ]
+    }
+  },
+  "focus": {
+    "ring": {
+      "$description": "The one focus visual for everything: outer ring plus inner ring.",
+      "color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "hex": "#ffffff"
+        }
+      },
+      "inner": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0,
+            0,
+            0
+          ],
+          "alpha": 0.702
+        }
+      },
+      "halo": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0.702
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 0,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 1,
+              "unit": "px"
+            }
+          }
+        ]
+      },
+      "halo-inset": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0.702
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 0,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 3,
+              "unit": "px"
+            },
+            "inset": true
+          }
+        ]
+      },
+      "width": {
+        "$type": "dimension",
+        "$value": "{border.width.2}"
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}
