@@ -1,8 +1,12 @@
 # motifjs-design-system
 
-`@motifx-community/design-system` is the design foundation for **MotifJS** (`@motifx/core`), the fine-grained reactive UI framework without a virtual DOM: design tokens, themes, base styles, the identity typefaces and accessibility preferences that every MotifJS component library and app builds on.
+[![npm](https://img.shields.io/npm/v/@motifx-community/design-system/beta?label=npm%20%40beta)](https://www.npmjs.com/package/@motifx-community/design-system)
+[![CI](https://github.com/motifjs-community/motifjs-design-system/actions/workflows/ci.yml/badge.svg)](https://github.com/motifjs-community/motifjs-design-system/actions/workflows/ci.yml)
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[Live demo](https://motifjs-community.github.io/motifjs-design-system/) · [Docs](https://motifjs.com/docs/design-system)
+`@motifx-community/design-system` is the design foundation for **MotifJS** (`@motifx/core`), the UI framework whose view is a live object tree, not a description of one: design tokens, themes, base styles, the identity typefaces and accessibility preferences that every MotifJS component library and app builds on.
+
+[Live demo](https://motifjs-community.github.io/motifjs-design-system/) · [The components built on it](https://ui.motifjs.com)
 
 ![The demo page in the light theme: a card, a button and a canvas drawn from tokens, then the semantic color swatches](examples/basic/screenshot-light.png)
 
@@ -151,7 +155,7 @@ export default { extends: ['@motifx-community/design-system/stylelint'] };
 
 ## Contributing
 
-`npm install`, then `npm run check` runs the token build, typecheck, stylelint, tests, the package build and the example build. Edit tokens only in `tokens/*.json` (DTCG 2025.10 object values) and run `npm run build:tokens`; `src/generated/tokens.ts` is committed output. See [CONTRIBUTING.md](https://github.com/motifjs-community/.github/blob/main/CONTRIBUTING.md).
+`npm install`, then `npm run check` runs the token build, typecheck, stylelint, tests, the package build and the example build. Edit tokens only in `tokens/*.json` (DTCG 2025.10 object values) and run `npm run build:tokens`; `src/generated/tokens.ts` is committed output. The setup, the checks and the rules a change follows are in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
