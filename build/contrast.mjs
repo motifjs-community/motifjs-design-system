@@ -86,10 +86,10 @@ export const DISTINCT_PAIRS = [
 /** The smallest OKLab distance (×100) two of them may keep for a deuteranope or a protanope. */
 export const DISTINCT_MIN = 10;
 /**
- * Languages whose status colors come from somewhere else (Material, Fluent: their own specs) or
- * predate this check (Tactile, Lounge): reported, not enforced. A new language is enforced.
+ * Languages whose status colors come from somewhere else (Material, Fluent: their own specs):
+ * reported, not enforced. The kit's own languages and every new one are enforced.
  */
-export const DISTINCT_REPORTED = ['tactile', 'lounge', 'material', 'fluent'];
+export const DISTINCT_REPORTED = ['material', 'fluent'];
 
 // Machado, Oliveira and Fernandes (2009), full severity, on linear sRGB.
 const SIGHT = {

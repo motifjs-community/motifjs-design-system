@@ -7,6 +7,14 @@ renaming one is a breaking change and is announced one minor version ahead with 
 
 ## [Unreleased]
 
+### Changed
+
+- Tactile and Lounge status colors apart for color-blind readers. In the light theme `color.critical.light` is
+  now `#b03659` (hover `#c13b61`), `color.success.light` `#006402` and `color.caution.light` `#754702`; in the
+  dark `color.success.dark` is `#6dc43a`. Success, caution and danger text now keep an OKLab distance of 10 for
+  a deuteranope and a protanope, with every contrast pair still at AA. The color-blindness check is enforced for
+  Tactile and Lounge from here on; Material and Fluent stay reported, their colors being their sources'.
+
 ## [0.1.0-beta.0] - 2026-10-30
 
 The first preview on npm (`npm i @motifx-community/design-system@beta`).
