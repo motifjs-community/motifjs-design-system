@@ -7,6 +7,8 @@ renaming one is a breaking change and is announced one minor version ahead with 
 
 ## [Unreleased]
 
+## [0.1.0-beta.1] - 2026-11-05
+
 ### Changed
 
 - Tactile and Lounge status colors apart for color-blind readers. In the light theme `color.critical.light` is
