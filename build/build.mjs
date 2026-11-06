@@ -1,10 +1,10 @@
-// DTCG source to dist/css (tokens, themes, identities), src/generated/tokens.ts
+// DTCG source to dist/css (tokens, themes, design languages), src/generated/tokens.ts
 // and dist/json. `npm run build:tokens`. The contrast gate (contrast.mjs) and
 // the final styles.css assembly (css.mjs) run after it in `npm run build`.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { DEFAULT_IDENTITY, HEADER, IDENTITIES, ROOT, THEMES, renderAll, renderCss } from './tokens.mjs';
+import { DEFAULT_DESIGN_LANGUAGE, HEADER, DESIGN_LANGUAGES, ROOT, THEMES, renderAll, renderCss } from './tokens.mjs';
 
 /** The cascade order every stylesheet of the package declares before using a layer. */
 export const LAYER_ORDER = '@layer mx.reset, mx.tokens, mx.base;\n';
@@ -19,7 +19,7 @@ const write = (rel, text) => {
 const others = (list, chosen) => list.filter((x) => x !== chosen);
 
 /**
- * One language under its `data-identity` scope: its scales, default density
+ * One language under its `data-design-language` scope: its scales, default density
  * and default theme on the scope itself; dark following the system when the
  * language starts light and ships dark; its other densities and its themes as
  * scopes on or below it. A theme the language does not ship falls through to
@@ -28,41 +28,41 @@ const others = (list, chosen) => list.filter((x) => x !== chosen);
  * blocks win over the default language's by source order and the preference
  * overrides, loaded later, still win over them.
  */
-export async function renderIdentity(identity) {
-  const { themes, defaultTheme, densities, defaultDensity } = IDENTITIES[identity];
-  const scope = `[data-identity="${identity}"]`;
+export async function renderDesignLanguage(designLanguage) {
+  const { themes, defaultTheme, densities, defaultDensity } = DESIGN_LANGUAGES[designLanguage];
+  const scope = `[data-design-language="${designLanguage}"]`;
   const on = (attr) => `${scope}:where([${attr}]), :where(${scope}) [${attr}]`;
   const missing = others(THEMES, null).filter((t) => !themes.includes(t));
   const themeScope = missing.length ? `${scope}:where(:not(${missing.map((t) => `[data-theme="${t}"]`).join(', ')}))` : scope;
-  const blocks = await renderCss({ identity }, [
-    { layer: 'identity', selector: scope },
+  const blocks = await renderCss({ designLanguage }, [
+    { layer: 'design-language', selector: scope },
     { layer: 'density', selector: scope },
     { layer: 'semantic', selector: themeScope },
   ]);
   if (defaultTheme === 'light' && themes.includes('dark')) {
     blocks.push(
-      ...(await renderCss({ identity, theme: 'dark' }, [
+      ...(await renderCss({ designLanguage, theme: 'dark' }, [
         { layer: 'semantic', selector: `${scope}:where(:not([data-theme]))`, media: '(prefers-color-scheme: dark)' },
       ])),
     );
   }
   for (const density of others(densities, defaultDensity)) {
-    blocks.push(...(await renderCss({ identity, density }, [{ layer: 'density', selector: on(`data-density="${density}"`) }])));
+    blocks.push(...(await renderCss({ designLanguage, density }, [{ layer: 'density', selector: on(`data-density="${density}"`) }])));
   }
   for (const theme of themes) {
-    blocks.push(...(await renderCss({ identity, theme }, [{ layer: 'semantic', selector: on(`data-theme="${theme}"`) }])));
+    blocks.push(...(await renderCss({ designLanguage, theme }, [{ layer: 'semantic', selector: on(`data-theme="${theme}"`) }])));
   }
   return blocks.join('\n');
 }
 
 export async function build() {
-  const { themes, defaultTheme, densities, defaultDensity } = IDENTITIES[DEFAULT_IDENTITY];
+  const { themes, defaultTheme, densities, defaultDensity } = DESIGN_LANGUAGES[DEFAULT_DESIGN_LANGUAGE];
 
   // tokens.css: the shared primitives, then the default language's scales and
   // default density on :root, its other densities as scopes.
   const root = await renderCss({}, [
     { layer: 'primitive', selector: ':root' },
-    { layer: 'identity', selector: ':root' },
+    { layer: 'design-language', selector: ':root' },
     { layer: 'density', selector: ':root' },
   ]);
   for (const density of others(densities, defaultDensity)) {
@@ -84,9 +84,9 @@ export async function build() {
   ]);
   write('dist/css/themes/auto.css', HEADER + lightRoot + '\n' + darkAuto);
 
-  // identities/<name>.css: every language under its own attribute scope, the default one included.
-  for (const identity of Object.keys(IDENTITIES)) {
-    write(`dist/css/identities/${identity}.css`, HEADER + (await renderIdentity(identity)));
+  // design-languages/<name>.css: every language under its own attribute scope, the default one included.
+  for (const designLanguage of Object.keys(DESIGN_LANGUAGES)) {
+    write(`dist/css/design-languages/${designLanguage}.css`, HEADER + (await renderDesignLanguage(designLanguage)));
   }
 
   // Typed token map (committed, so typecheck and tests work without a build) and flat JSON:
@@ -96,12 +96,12 @@ export async function build() {
   for (const density of others(densities, defaultDensity)) {
     write(`dist/json/density-${density}.json`, await renderAll({ density }, 'mx/json'));
   }
-  for (const [identity, language] of Object.entries(IDENTITIES)) {
+  for (const [designLanguage, language] of Object.entries(DESIGN_LANGUAGES)) {
     for (const theme of language.themes) {
-      write(`dist/json/${identity}/${theme}.json`, await renderAll({ identity, theme }, 'mx/json'));
+      write(`dist/json/${designLanguage}/${theme}.json`, await renderAll({ designLanguage, theme }, 'mx/json'));
     }
     for (const density of others(language.densities, language.defaultDensity)) {
-      write(`dist/json/${identity}/density-${density}.json`, await renderAll({ identity, density }, 'mx/json'));
+      write(`dist/json/${designLanguage}/density-${density}.json`, await renderAll({ designLanguage, density }, 'mx/json'));
     }
   }
 }

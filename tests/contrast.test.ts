@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { CONTRAST_PAIRS, DISTINCT_REPORTED, checkContrast, checkDistinct, contrastRatio, parseCssColor, seenDistance } from '../build/contrast.mjs';
-import { IDENTITIES } from '../build/tokens.mjs';
+import { DESIGN_LANGUAGES } from '../build/tokens.mjs';
 
 describe('contrast gate', () => {
   it('parses the colors the build renders', () => {
@@ -21,10 +21,10 @@ describe('contrast gate', () => {
 
   it('passes every pair in every theme of every language (AA, AAA in high contrast)', async () => {
     const rows = await checkContrast();
-    const themeCount = Object.values(IDENTITIES).reduce((n, language) => n + language.themes.length, 0);
+    const themeCount = Object.values(DESIGN_LANGUAGES).reduce((n, language) => n + language.themes.length, 0);
     expect(rows.length).toBe(themeCount * CONTRAST_PAIRS.length);
     for (const r of rows) expect(r.required).toBe(r.theme === 'high-contrast' ? 7 : 4.5);
-    expect(rows.filter((r) => !r.pass).map((r) => `${r.identity} ${r.theme} ${r.fg} on ${r.bg} ${r.ratio.toFixed(2)}`)).toEqual([]);
+    expect(rows.filter((r) => !r.pass).map((r) => `${r.designLanguage} ${r.theme} ${r.fg} on ${r.bg} ${r.ratio.toFixed(2)}`)).toEqual([]);
   });
 
   it('measures how far apart two colors stay for a color-blind reader', () => {
@@ -37,8 +37,8 @@ describe('contrast gate', () => {
 
   it('keeps the status colors apart for color-blind readers in every enforced language', async () => {
     const rows = await checkDistinct();
-    expect(rows.some((r) => r.identity === 'lilac' && r.enforced)).toBe(true);
-    for (const id of DISTINCT_REPORTED) expect(rows.filter((r) => r.identity === id).every((r) => !r.enforced)).toBe(true);
-    expect(rows.filter((r) => r.enforced && !r.pass).map((r) => `${r.identity} ${r.theme} ${r.a} / ${r.b} ${r.sight} ${r.distance.toFixed(1)}`)).toEqual([]);
+    expect(rows.some((r) => r.designLanguage === 'lilac' && r.enforced)).toBe(true);
+    for (const id of DISTINCT_REPORTED) expect(rows.filter((r) => r.designLanguage === id).every((r) => !r.enforced)).toBe(true);
+    expect(rows.filter((r) => r.enforced && !r.pass).map((r) => `${r.designLanguage} ${r.theme} ${r.a} / ${r.b} ${r.sight} ${r.distance.toFixed(1)}`)).toEqual([]);
   });
 });

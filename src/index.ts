@@ -1,19 +1,19 @@
 export {
   tokens,
-  identities,
+  designLanguages,
   themes,
   densities,
-  defaultIdentity,
-  identityThemes,
+  defaultDesignLanguage,
+  designLanguageThemes,
   defaultTheme,
   defaultDensity,
   type TokenName,
   type TokenType,
-  type IdentityName,
+  type DesignLanguageName,
   type ThemeName,
   type Density,
 } from './generated/tokens';
-export { getIdentity, setIdentity } from './identity';
+export { getDesignLanguage, setDesignLanguage } from './design-language';
 export { getDensity, getTheme, onSystemThemeChange, resolveTheme, setDensity, setTheme, type ThemeChoice } from './theme';
 
 import { tokens, type TokenName } from './generated/tokens';

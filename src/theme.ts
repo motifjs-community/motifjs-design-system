@@ -1,4 +1,4 @@
-import { type Density, type ThemeName, defaultIdentity, densities, identityThemes, themes } from './generated/tokens';
+import { type Density, type ThemeName, defaultDesignLanguage, densities, designLanguageThemes, themes } from './generated/tokens';
 
 /** What `setTheme` accepts: a shipped theme, or `'system'` to follow `prefers-color-scheme`. */
 export type ThemeChoice = ThemeName | 'system';
@@ -46,8 +46,8 @@ export function getTheme(root: Element = document.documentElement): ThemeChoice 
 export function resolveTheme(root: Element = document.documentElement): ThemeName {
   const chosen = getTheme(root);
   if (chosen !== 'system') return chosen;
-  const name = root.closest('[data-identity]')?.getAttribute('data-identity') ?? '';
-  const language = name in identityThemes ? identityThemes[name as keyof typeof identityThemes] : identityThemes[defaultIdentity];
+  const name = root.closest('[data-design-language]')?.getAttribute('data-design-language') ?? '';
+  const language = name in designLanguageThemes ? designLanguageThemes[name as keyof typeof designLanguageThemes] : designLanguageThemes[defaultDesignLanguage];
   const themesShipped: readonly ThemeName[] = language.themes;
   if (language.defaultTheme !== 'light' || !themesShipped.includes('dark')) return language.defaultTheme;
   return typeof matchMedia === 'function' && matchMedia(DARK_QUERY).matches ? 'dark' : 'light';

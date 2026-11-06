@@ -17,11 +17,11 @@
         }
       ]
     },
-    "identity": {
+    "designLanguage": {
       "description": "Fluent corner radii (ControlCornerRadius, OverlayCornerRadius), elevation, type (Segoe UI Variable) and motion.",
       "sources": [
         {
-          "$ref": "identity/fluent/base.json"
+          "$ref": "design-language/fluent/base.json"
         }
       ]
     }
@@ -32,12 +32,12 @@
       "contexts": {
         "light": [
           {
-            "$ref": "identity/fluent/light.json"
+            "$ref": "design-language/fluent/light.json"
           }
         ],
         "dark": [
           {
-            "$ref": "identity/fluent/dark.json"
+            "$ref": "design-language/fluent/dark.json"
           }
         ]
       },
@@ -48,12 +48,12 @@
       "contexts": {
         "comfortable": [
           {
-            "$ref": "identity/fluent/density/comfortable.json"
+            "$ref": "design-language/fluent/density/comfortable.json"
           }
         ],
         "compact": [
           {
-            "$ref": "identity/fluent/density/compact.json"
+            "$ref": "design-language/fluent/density/compact.json"
           }
         ]
       },
@@ -65,7 +65,7 @@
       "$ref": "#/sets/primitive"
     },
     {
-      "$ref": "#/sets/identity"
+      "$ref": "#/sets/designLanguage"
     },
     {
       "$ref": "#/modifiers/theme"

@@ -19,12 +19,12 @@
     }
   },
   "modifiers": {
-    "identity": {
+    "designLanguage": {
       "description": "The design language: its corner radii, shadows, type and motion. Same token names in every language, different values.",
       "contexts": {
         "tactile": [
           {
-            "$ref": "identity/tactile/base.json"
+            "$ref": "design-language/tactile/base.json"
           }
         ]
       },
@@ -35,17 +35,17 @@
       "contexts": {
         "light": [
           {
-            "$ref": "identity/tactile/light.json"
+            "$ref": "design-language/tactile/light.json"
           }
         ],
         "dark": [
           {
-            "$ref": "identity/tactile/dark.json"
+            "$ref": "design-language/tactile/dark.json"
           }
         ],
         "high-contrast": [
           {
-            "$ref": "identity/tactile/high-contrast.json"
+            "$ref": "design-language/tactile/high-contrast.json"
           }
         ]
       },
@@ -56,12 +56,12 @@
       "contexts": {
         "comfortable": [
           {
-            "$ref": "identity/tactile/density/comfortable.json"
+            "$ref": "design-language/tactile/density/comfortable.json"
           }
         ],
         "compact": [
           {
-            "$ref": "identity/tactile/density/compact.json"
+            "$ref": "design-language/tactile/density/compact.json"
           }
         ]
       },
@@ -73,7 +73,7 @@
       "$ref": "#/sets/primitive"
     },
     {
-      "$ref": "#/modifiers/identity"
+      "$ref": "#/modifiers/designLanguage"
     },
     {
       "$ref": "#/modifiers/theme"

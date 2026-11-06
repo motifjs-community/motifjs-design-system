@@ -14,11 +14,11 @@ export const PREFIX = 'mx';
 export const LAYER = 'mx.tokens';
 
 /**
- * The design languages the package ships, the value of `data-identity`: for
+ * The design languages the package ships, the value of `data-design-language`: for
  * each one, the themes (color modes) and densities it defines and its
  * defaults. Token names are the same in every language; the values differ.
  */
-export const IDENTITIES = {
+export const DESIGN_LANGUAGES = {
   tactile: {
     themes: ['light', 'dark', 'high-contrast'],
     defaultTheme: 'light',
@@ -50,7 +50,7 @@ export const IDENTITIES = {
     defaultDensity: 'comfortable',
   },
 };
-export const DEFAULT_IDENTITY = 'tactile';
+export const DEFAULT_DESIGN_LANGUAGE = 'tactile';
 /** The whole theme vocabulary (the values of `data-theme`); a language ships a subset. */
 export const THEMES = ['light', 'dark', 'high-contrast'];
 export const DEFAULT_THEME = 'light';
@@ -60,22 +60,22 @@ export const DEFAULT_DENSITY = 'comfortable';
 
 export const SOURCES = {
   primitive: `${ROOT}/tokens/primitive/*.json`,
-  identity: (identity) => `${ROOT}/tokens/identity/${identity}/base.json`,
-  semantic: (identity, theme) => `${ROOT}/tokens/identity/${identity}/${theme}.json`,
-  density: (identity, density) => `${ROOT}/tokens/identity/${identity}/density/${density}.json`,
+  designLanguage: (designLanguage) => `${ROOT}/tokens/design-language/${designLanguage}/base.json`,
+  semantic: (designLanguage, theme) => `${ROOT}/tokens/design-language/${designLanguage}/${theme}.json`,
+  density: (designLanguage, density) => `${ROOT}/tokens/design-language/${designLanguage}/density/${density}.json`,
 };
 
 /**
  * The layer a token belongs to, from the file it was defined in: the shared
- * primitives, a language's own scales (`identity`), its semantic colors per
+ * primitives, a language's own scales (`designLanguage`), its semantic colors per
  * theme, or its control sizes per density.
  */
 export function layerOf(token) {
   const file = String(token.filePath).replace(/\\/g, '/');
   if (file.includes('/tokens/primitive/')) return 'primitive';
-  if (file.includes('/tokens/identity/')) {
+  if (file.includes('/tokens/design-language/')) {
     if (file.includes('/density/')) return 'density';
-    if (file.endsWith('/base.json')) return 'identity';
+    if (file.endsWith('/base.json')) return 'design-language';
     return 'semantic';
   }
   return 'other';
@@ -242,13 +242,13 @@ StyleDictionary.registerFormat({
       '/** The DTCG types used in this token set. */',
       "export type TokenType = (typeof tokens)[TokenName]['type'];",
       '',
-      `export const identities = [${list(Object.keys(IDENTITIES))}] as const;`,
-      '/** A shipped design language, the value of `data-identity`. */',
-      'export type IdentityName = (typeof identities)[number];',
-      `export const defaultIdentity: IdentityName = ${tsString(DEFAULT_IDENTITY)};`,
+      `export const designLanguages = [${list(Object.keys(DESIGN_LANGUAGES))}] as const;`,
+      '/** A shipped design language, the value of `data-design-language`. */',
+      'export type DesignLanguageName = (typeof designLanguages)[number];',
+      `export const defaultDesignLanguage: DesignLanguageName = ${tsString(DEFAULT_DESIGN_LANGUAGE)};`,
       '/** The themes each design language ships and the one its scope starts from. */',
-      'export const identityThemes = {',
-      ...Object.entries(IDENTITIES).map(
+      'export const designLanguageThemes = {',
+      ...Object.entries(DESIGN_LANGUAGES).map(
         ([name, l]) => `  ${tsString(name)}: { themes: [${list(l.themes)}], defaultTheme: ${tsString(l.defaultTheme)} },`,
       ),
       '} as const;',
@@ -292,15 +292,15 @@ StyleDictionary.registerFormat({
  * one instance twice merges its tokens with themselves, which Style Dictionary
  * reports as a collision.
  */
-export function createDictionary({ identity = DEFAULT_IDENTITY, theme, density, platforms = {}, log = {} } = {}) {
-  const language = IDENTITIES[identity];
-  if (!language) throw new Error(`tokens: "${identity}" is not a design language`);
+export function createDictionary({ designLanguage = DEFAULT_DESIGN_LANGUAGE, theme, density, platforms = {}, log = {} } = {}) {
+  const language = DESIGN_LANGUAGES[designLanguage];
+  if (!language) throw new Error(`tokens: "${designLanguage}" is not a design language`);
   theme ??= language.defaultTheme;
   density ??= language.defaultDensity;
-  if (!language.themes.includes(theme)) throw new Error(`tokens: "${identity}" has no "${theme}" theme`);
-  if (!language.densities.includes(density)) throw new Error(`tokens: "${identity}" has no "${density}" density`);
+  if (!language.themes.includes(theme)) throw new Error(`tokens: "${designLanguage}" has no "${theme}" theme`);
+  if (!language.densities.includes(density)) throw new Error(`tokens: "${designLanguage}" has no "${density}" density`);
   return new StyleDictionary({
-    source: [SOURCES.primitive, SOURCES.identity(identity), SOURCES.semantic(identity, theme), SOURCES.density(identity, density)],
+    source: [SOURCES.primitive, SOURCES.designLanguage(designLanguage), SOURCES.semantic(designLanguage, theme), SOURCES.density(designLanguage, density)],
     log: {
       verbosity: process.env.MX_TOKENS_VERBOSE ? 'verbose' : 'silent',
       warnings: 'error',
@@ -316,29 +316,29 @@ const platform = (files, log) => ({ transforms: TRANSFORMS, prefix: PREFIX, file
 /**
  * Renders CSS blocks for one language/theme/density in memory, one string per
  * block. Each block: `{ layer, selector, media? }` where `layer` picks the
- * tokens ('primitive' | 'identity' | 'semantic' | 'density'). References to
+ * tokens ('primitive' | 'design-language' | 'semantic' | 'density'). References to
  * tokens outside the block stay as var(), which is the point; the "filtered
  * reference" warning is off for this platform only.
  */
-export async function renderCss({ identity, theme, density } = {}, blocks) {
+export async function renderCss({ designLanguage, theme, density } = {}, blocks) {
   const files = blocks.map((b, i) => ({
     destination: `${i}.css`,
     format: 'mx/css',
     filter: (t) => layerOf(t) === b.layer,
     options: { selector: b.selector, media: b.media, outputReferences: true },
   }));
-  const sd = createDictionary({ identity, theme, density, platforms: { css: platform(files, { warnings: 'disabled' }) } });
+  const sd = createDictionary({ designLanguage, theme, density, platforms: { css: platform(files, { warnings: 'disabled' }) } });
   return (await sd.formatPlatform('css')).map((f) => String(f.output));
 }
 
 /** Renders every token of one language/theme/density with one format ('mx/ts' | 'mx/json') in memory. */
-export async function renderAll({ identity, theme, density } = {}, format) {
-  const sd = createDictionary({ identity, theme, density, platforms: { all: platform([{ destination: 'all', format }]) } });
+export async function renderAll({ designLanguage, theme, density } = {}, format) {
+  const sd = createDictionary({ designLanguage, theme, density, platforms: { all: platform([{ destination: 'all', format }]) } });
   return String((await sd.formatPlatform('all'))[0].output);
 }
 
 /** The transformed tokens of one language/theme/density, as the CSS platform sees them. */
-export async function resolvedTokens({ identity, theme, density } = {}) {
-  const sd = createDictionary({ identity, theme, density, platforms: { all: platform([]) } });
+export async function resolvedTokens({ designLanguage, theme, density } = {}) {
+  const sd = createDictionary({ designLanguage, theme, density, platforms: { all: platform([]) } });
   return (await sd.getPlatformTokens('all')).allTokens;
 }

@@ -5,7 +5,7 @@
 import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { join } from 'node:path';
-import { DEFAULT_IDENTITY, IDENTITIES, ROOT } from './tokens.mjs';
+import { DEFAULT_DESIGN_LANGUAGE, DESIGN_LANGUAGES, ROOT } from './tokens.mjs';
 import { LAYER_ORDER } from './build.mjs';
 
 const read = (rel) => readFileSync(join(ROOT, rel), 'utf8');
@@ -18,8 +18,8 @@ const parts = [
   read('src/css/fonts.css'),
   stripHeader(read('dist/css/tokens.css')).replace(LAYER_ORDER, ''),
   stripHeader(read('dist/css/themes/auto.css')),
-  ...IDENTITIES[DEFAULT_IDENTITY].themes.map((t) => stripHeader(read(`dist/css/themes/${t}.css`))),
-  ...Object.keys(IDENTITIES).map((i) => stripHeader(read(`dist/css/identities/${i}.css`))),
+  ...DESIGN_LANGUAGES[DEFAULT_DESIGN_LANGUAGE].themes.map((t) => stripHeader(read(`dist/css/themes/${t}.css`))),
+  ...Object.keys(DESIGN_LANGUAGES).map((i) => stripHeader(read(`dist/css/design-languages/${i}.css`))),
   read('src/css/preferences.css'),
   read('src/css/base.css'),
 ];
@@ -28,7 +28,7 @@ for (const f of ['reset.css', 'fonts.css', 'preferences.css', 'base.css']) {
   copyFileSync(join(ROOT, 'src/css', f), join(ROOT, 'dist/css', f));
 }
 
-// The identity faces, from the Fontsource builds (devDependencies; the package
+// The design language faces, from the Fontsource builds (devDependencies; the package
 // has no runtime dependency): the files fonts.css points at, next to it.
 const resolve = createRequire(import.meta.url).resolve;
 const pkgDir = (name) => resolve(`${name}/package.json`).replace(/package\.json$/, '');

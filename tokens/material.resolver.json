@@ -17,11 +17,11 @@
         }
       ]
     },
-    "identity": {
+    "designLanguage": {
       "description": "Material corner radii, elevation, type (Google Sans Flex) and motion.",
       "sources": [
         {
-          "$ref": "identity/material/base.json"
+          "$ref": "design-language/material/base.json"
         }
       ]
     }
@@ -32,12 +32,12 @@
       "contexts": {
         "light": [
           {
-            "$ref": "identity/material/light.json"
+            "$ref": "design-language/material/light.json"
           }
         ],
         "dark": [
           {
-            "$ref": "identity/material/dark.json"
+            "$ref": "design-language/material/dark.json"
           }
         ]
       },
@@ -48,12 +48,12 @@
       "contexts": {
         "comfortable": [
           {
-            "$ref": "identity/material/density/comfortable.json"
+            "$ref": "design-language/material/density/comfortable.json"
           }
         ],
         "compact": [
           {
-            "$ref": "identity/material/density/compact.json"
+            "$ref": "design-language/material/density/compact.json"
           }
         ]
       },
@@ -65,7 +65,7 @@
       "$ref": "#/sets/primitive"
     },
     {
-      "$ref": "#/sets/identity"
+      "$ref": "#/sets/designLanguage"
     },
     {
       "$ref": "#/modifiers/theme"

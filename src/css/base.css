@@ -17,7 +17,7 @@
   }
 
   /* A design language that starts dark, on a scope without a theme of its own. */
-  [data-identity='lounge']:where(:not([data-theme])) {
+  [data-design-language='lounge']:where(:not([data-theme])) {
     color-scheme: dark;
   }
 
@@ -51,7 +51,7 @@
   }
 
   /* Lilac's headings take Fraunces in its soft cut. */
-  :where([data-identity='lilac'] h1) {
+  :where([data-design-language='lilac'] h1) {
     font-variation-settings: 'SOFT' 50;
   }
 

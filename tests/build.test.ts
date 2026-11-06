@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import StyleDictionary from 'style-dictionary';
 import {
-  DEFAULT_IDENTITY,
-  IDENTITIES,
+  DEFAULT_DESIGN_LANGUAGE,
+  DESIGN_LANGUAGES,
   SOURCES,
   TRANSFORMS,
   colorToCss,
@@ -14,7 +14,7 @@ import {
   shadowToCss,
   unitToCss,
 } from '../build/tokens.mjs';
-import { renderIdentity } from '../build/build.mjs';
+import { renderDesignLanguage } from '../build/build.mjs';
 
 const px = (value: number) => ({ value, unit: 'px' });
 
@@ -46,35 +46,35 @@ describe('token source', () => {
       .map((t) => t.path.join('.'))
       .sort();
 
-  const languages = Object.entries(IDENTITIES);
+  const languages = Object.entries(DESIGN_LANGUAGES);
 
   it('every theme of every language defines the same semantic token names', async () => {
     const reference = await names({}, 'semantic');
     expect(reference.length).toBeGreaterThan(40);
-    for (const [identity, { themes }] of languages) {
-      for (const theme of themes) expect(await names({ identity, theme }, 'semantic'), `${identity} ${theme}`).toEqual(reference);
+    for (const [designLanguage, { themes }] of languages) {
+      for (const theme of themes) expect(await names({ designLanguage, theme }, 'semantic'), `${designLanguage} ${theme}`).toEqual(reference);
     }
   });
 
   it('every density of every language defines the same control token names', async () => {
     const reference = await names({}, 'density');
-    for (const [identity, { densities }] of languages) {
-      for (const density of densities) expect(await names({ identity, density }, 'density'), `${identity} ${density}`).toEqual(reference);
+    for (const [designLanguage, { densities }] of languages) {
+      for (const density of densities) expect(await names({ designLanguage, density }, 'density'), `${designLanguage} ${density}`).toEqual(reference);
     }
   });
 
   it('every language defines the same scale token names (radius, shadow, font, motion)', async () => {
-    const reference = await names({}, 'identity');
+    const reference = await names({}, 'design-language');
     expect(reference).toContain('radius.md');
     expect(reference).toContain('shadow.4');
     expect(reference).toContain('font.family.sans');
     expect(reference).toContain('motion.duration.fast');
-    for (const [identity] of languages) expect(await names({ identity }, 'identity'), identity).toEqual(reference);
+    for (const [designLanguage] of languages) expect(await names({ designLanguage }, 'design-language'), designLanguage).toEqual(reference);
   });
 
   it('refuses a language, theme or density that is not shipped', async () => {
-    await expect(resolvedTokens({ identity: 'sepia' })).rejects.toThrow(/not a design language/);
-    await expect(resolvedTokens({ identity: DEFAULT_IDENTITY, theme: 'sepia' })).rejects.toThrow(/no "sepia" theme/);
+    await expect(resolvedTokens({ designLanguage: 'sepia' })).rejects.toThrow(/not a design language/);
+    await expect(resolvedTokens({ designLanguage: DEFAULT_DESIGN_LANGUAGE, theme: 'sepia' })).rejects.toThrow(/no "sepia" theme/);
     await expect(resolvedTokens({ density: 'cozy' })).rejects.toThrow(/no "cozy" density/);
   });
 
@@ -99,7 +99,7 @@ describe('CSS output', () => {
   it('writes each layer as a block of custom properties inside @layer mx.tokens', async () => {
     const [primitive, scales, semantic, density] = await renderCss({}, [
       { layer: 'primitive', selector: ':root' },
-      { layer: 'identity', selector: ':root' },
+      { layer: 'design-language', selector: ':root' },
       { layer: 'semantic', selector: '[data-theme="light"]' },
       { layer: 'density', selector: ':root' },
     ]);
@@ -138,14 +138,14 @@ describe('TypeScript and JSON output', () => {
     const ts = await renderAll({}, 'mx/ts');
     expect(ts).toContain("'color.bg.canvas': { cssVar: '--mx-color-bg-canvas', type: 'color', layer: 'semantic' },");
     expect(ts).toContain("'space.4': { cssVar: '--mx-space-4', type: 'dimension', layer: 'primitive' },");
-    expect(ts).toContain("'radius.md': { cssVar: '--mx-radius-md', type: 'dimension', layer: 'identity' },");
+    expect(ts).toContain("'radius.md': { cssVar: '--mx-radius-md', type: 'dimension', layer: 'design-language' },");
     expect(ts).toContain("'control.height.md': { cssVar: '--mx-control-height-md', type: 'dimension', layer: 'density' },");
-    expect(ts).toContain("export const identities = ['tactile', 'lounge', 'material', 'fluent', 'lilac'] as const;");
+    expect(ts).toContain("export const designLanguages = ['tactile', 'lounge', 'material', 'fluent', 'lilac'] as const;");
     expect(ts).toContain("'lilac': { themes: ['light', 'dark'], defaultTheme: 'light' },");
     expect(ts).toContain("'fluent': { themes: ['light', 'dark'], defaultTheme: 'light' },");
     expect(ts).toContain("'material': { themes: ['light', 'dark'], defaultTheme: 'light' },");
     expect(ts).toContain("'lounge': { themes: ['dark'], defaultTheme: 'dark' },");
-    expect(ts).toContain("export const defaultIdentity: IdentityName = 'tactile';");
+    expect(ts).toContain("export const defaultDesignLanguage: DesignLanguageName = 'tactile';");
     expect(ts).toContain("export const themes = ['light', 'dark', 'high-contrast'] as const;");
     expect(ts).toContain("export const densities = ['comfortable', 'compact'] as const;");
   });
@@ -160,14 +160,14 @@ describe('TypeScript and JSON output', () => {
       ref: 'color.gray.12',
     });
     expect(json['color.gray.12']).toMatchObject({ layer: 'primitive', ref: null, value: '#232220' });
-    expect(json['motion.duration.fast']).toMatchObject({ layer: 'identity', value: '83ms' });
+    expect(json['motion.duration.fast']).toMatchObject({ layer: 'design-language', value: '83ms' });
   });
 });
 
 describe('a design language as an attribute scope', () => {
   it('puts its scales, default density and default theme on the scope, dark under the system preference, the rest on or below it', async () => {
-    const css = await renderIdentity(DEFAULT_IDENTITY);
-    const scope = '[data-identity="tactile"]';
+    const css = await renderDesignLanguage(DEFAULT_DESIGN_LANGUAGE);
+    const scope = '[data-design-language="tactile"]';
     const blocks = css.split('@layer mx.tokens {').slice(1);
     expect(blocks.length).toBe(3 + 1 + 1 + 3);
     expect(blocks[0]).toContain(`${scope} {`);
@@ -183,8 +183,8 @@ describe('a design language as an attribute scope', () => {
   });
 
   it('a language that ships fewer themes lets the others fall through, so high contrast always wins', async () => {
-    const css = await renderIdentity('lounge');
-    const scope = '[data-identity="lounge"]';
+    const css = await renderDesignLanguage('lounge');
+    const scope = '[data-design-language="lounge"]';
     const blocks = css.split('@layer mx.tokens {').slice(1);
     expect(blocks.length).toBe(3 + 1 + 1);
     expect(blocks[0]).toContain('--mx-radius-md: 1.125rem;');

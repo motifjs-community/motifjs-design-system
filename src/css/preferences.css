@@ -17,7 +17,7 @@
   @media (prefers-reduced-transparency: reduce) {
     :root,
     [data-theme],
-    [data-identity] {
+    [data-design-language] {
       --mx-color-bg-glass: var(--mx-color-bg-surface);
       --mx-color-fill-control-default: var(--mx-color-bg-surface);
       --mx-color-fill-control-secondary: var(--mx-color-bg-card);
@@ -40,7 +40,7 @@
   @media (forced-colors: active) {
     :root,
     [data-theme],
-    [data-identity] {
+    [data-design-language] {
       --mx-color-bg-canvas: Canvas;
       --mx-color-bg-layer: Canvas;
       --mx-color-bg-card: Canvas;

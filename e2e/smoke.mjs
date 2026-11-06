@@ -121,11 +121,11 @@ const scoped = await page.evaluate(() => {
 });
 check('a nested data-theme scopes its subtree', scoped === 'rgb(225, 224, 218)', scoped);
 
-// design language: the picker writes data-identity; the default language under its own scope is the same language
+// design language: the picker writes data-design-language; the default language under its own scope is the same language
 await page.selectOption('select[aria-label="Theme"]', 'light');
 await page.selectOption('select[aria-label="Theme"]', 'light');
 await page.selectOption('select[aria-label="Design language"]', 'tactile');
-check('setIdentity writes data-identity', (await page.evaluate(() => document.documentElement.dataset.identity)) === 'tactile');
+check('setDesignLanguage writes data-design-language', (await page.evaluate(() => document.documentElement.dataset.designLanguage)) === 'tactile');
 check('a language scope with a theme on the same element takes that theme', (await color('--mx-color-bg-canvas')) === 'rgb(225, 224, 218)', await color('--mx-color-bg-canvas'));
 const nested = await page.evaluate(() => {
   const el = document.createElement('div');

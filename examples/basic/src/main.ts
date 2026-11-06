@@ -4,16 +4,16 @@ import {
   cssProperty,
   cssVar,
   getDensity,
-  getIdentity,
+  getDesignLanguage,
   getTheme,
-  identities,
+  designLanguages,
   onSystemThemeChange,
   setDensity,
-  setIdentity,
+  setDesignLanguage,
   setTheme,
   themes,
   tokens,
-  type IdentityName,
+  type DesignLanguageName,
   type ThemeChoice,
   type TokenName,
 } from '@motifx-community/design-system';
@@ -69,11 +69,11 @@ function rows(prefix: string, render: (name: TokenName) => HTMLElement) {
 
 // ---- header: design language, theme, density, direction --------------------------------------
 
-const identitySelect = el('select', { class: 'demo-control', 'aria-label': 'Design language' });
-for (const i of identities) identitySelect.append(el('option', { value: i }, i));
-identitySelect.value = getIdentity() === 'default' ? identities[0] : getIdentity();
-identitySelect.onchange = () => {
-  setIdentity(identitySelect.value as IdentityName);
+const designLanguageSelect = el('select', { class: 'demo-control', 'aria-label': 'Design language' });
+for (const i of designLanguages) designLanguageSelect.append(el('option', { value: i }, i));
+designLanguageSelect.value = getDesignLanguage() === 'default' ? designLanguages[0] : getDesignLanguage();
+designLanguageSelect.onchange = () => {
+  setDesignLanguage(designLanguageSelect.value as DesignLanguageName);
   refresh();
 };
 
@@ -167,7 +167,7 @@ const main = el(
   section('Palette', 'Primitive colors. Components never read these directly.', swatches('color.gray'), swatches('color.accent.'), swatches('color.critical.'), swatches('color.success.'), swatches('color.caution.'), swatches('color.contrast.')),
 );
 
-const header = el('header', { class: 'demo-header' }, el('span', { class: 'demo-brand' }, 'design-system demo'), identitySelect, themeSelect, densityButton, dirButton);
+const header = el('header', { class: 'demo-header' }, el('span', { class: 'demo-brand' }, 'design-system demo'), designLanguageSelect, themeSelect, densityButton, dirButton);
 
 function refresh() {
   for (const span of document.querySelectorAll<HTMLElement>('[data-token]')) {

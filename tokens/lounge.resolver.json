@@ -11,31 +11,31 @@
         { "$ref": "primitive/layer.json" }
       ]
     },
-    "identity": {
+    "designLanguage": {
       "description": "Lounge's corner radii, shadows, type and motion.",
-      "sources": [{ "$ref": "identity/lounge/base.json" }]
+      "sources": [{ "$ref": "design-language/lounge/base.json" }]
     }
   },
   "modifiers": {
     "theme": {
       "description": "Semantic colors and the focus ring. Lounge ships a dark theme only.",
       "contexts": {
-        "dark": [{ "$ref": "identity/lounge/dark.json" }]
+        "dark": [{ "$ref": "design-language/lounge/dark.json" }]
       },
       "default": "dark"
     },
     "density": {
       "description": "Control heights, paddings, gaps and the pressable feel.",
       "contexts": {
-        "comfortable": [{ "$ref": "identity/lounge/density/comfortable.json" }],
-        "compact": [{ "$ref": "identity/lounge/density/compact.json" }]
+        "comfortable": [{ "$ref": "design-language/lounge/density/comfortable.json" }],
+        "compact": [{ "$ref": "design-language/lounge/density/compact.json" }]
       },
       "default": "comfortable"
     }
   },
   "resolutionOrder": [
     { "$ref": "#/sets/primitive" },
-    { "$ref": "#/sets/identity" },
+    { "$ref": "#/sets/designLanguage" },
     { "$ref": "#/modifiers/theme" },
     { "$ref": "#/modifiers/density" }
   ]

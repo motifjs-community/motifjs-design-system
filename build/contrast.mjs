@@ -2,7 +2,7 @@
 // in light and dark and AAA (7:1) in high contrast, in every design language.
 // Part of `npm run build`; a failing pair fails the build, by design.
 import { pathToFileURL } from 'node:url';
-import { IDENTITIES, resolvedTokens } from './tokens.mjs';
+import { DESIGN_LANGUAGES, resolvedTokens } from './tokens.mjs';
 
 /** Semantic pairs components rely on, checked in every theme of every language. */
 export const CONTRAST_PAIRS = [
@@ -118,17 +118,17 @@ export function seenDistance(a, b, sight) {
   return Math.hypot(x[0] - y[0], x[1] - y[1], x[2] - y[2]) * 100;
 }
 
-/** One row per status pair per sight per theme per language: { identity, theme, a, b, sight, distance, enforced, pass }. */
-export async function checkDistinct(identities = Object.keys(IDENTITIES)) {
+/** One row per status pair per sight per theme per language: { designLanguage, theme, a, b, sight, distance, enforced, pass }. */
+export async function checkDistinct(designLanguages = Object.keys(DESIGN_LANGUAGES)) {
   const rows = [];
-  for (const identity of identities) {
-    for (const theme of IDENTITIES[identity].themes.filter((t) => t !== 'high-contrast')) {
-      const tokens = await resolvedTokens({ identity, theme });
+  for (const designLanguage of designLanguages) {
+    for (const theme of DESIGN_LANGUAGES[designLanguage].themes.filter((t) => t !== 'high-contrast')) {
+      const tokens = await resolvedTokens({ designLanguage, theme });
       const byName = new Map(tokens.map((t) => [t.path.join('.'), t.$value]));
       for (const [a, b] of DISTINCT_PAIRS) {
         for (const sight of Object.keys(SIGHT)) {
           const distance = seenDistance(byName.get(a), byName.get(b), sight);
-          rows.push({ identity, theme, a, b, sight, distance, enforced: !DISTINCT_REPORTED.includes(identity), pass: distance >= DISTINCT_MIN });
+          rows.push({ designLanguage, theme, a, b, sight, distance, enforced: !DISTINCT_REPORTED.includes(designLanguage), pass: distance >= DISTINCT_MIN });
         }
       }
     }
@@ -136,20 +136,20 @@ export async function checkDistinct(identities = Object.keys(IDENTITIES)) {
   return rows;
 }
 
-/** One row per pair per theme per language: { identity, theme, fg, bg, fgValue, bgValue, ratio, required, pass }. */
-export async function checkContrast(identities = Object.keys(IDENTITIES)) {
+/** One row per pair per theme per language: { designLanguage, theme, fg, bg, fgValue, bgValue, ratio, required, pass }. */
+export async function checkContrast(designLanguages = Object.keys(DESIGN_LANGUAGES)) {
   const rows = [];
-  for (const identity of identities) {
-    for (const theme of IDENTITIES[identity].themes) {
-      const tokens = await resolvedTokens({ identity, theme });
+  for (const designLanguage of designLanguages) {
+    for (const theme of DESIGN_LANGUAGES[designLanguage].themes) {
+      const tokens = await resolvedTokens({ designLanguage, theme });
       const byName = new Map(tokens.map((t) => [t.path.join('.'), t.$value]));
       for (const [fg, bg] of CONTRAST_PAIRS) {
         for (const name of [fg, bg]) {
-          if (!byName.has(name)) throw new Error(`contrast: "${name}" is not a token in "${identity}" ${theme}`);
+          if (!byName.has(name)) throw new Error(`contrast: "${name}" is not a token in "${designLanguage}" ${theme}`);
         }
         const ratio = contrastRatio(byName.get(fg), byName.get(bg));
         rows.push({
-          identity,
+          designLanguage,
           theme,
           fg,
           bg,
@@ -169,7 +169,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   const rows = await checkContrast();
   const failed = rows.filter((r) => !r.pass);
   const line = (r) =>
-    `${r.pass ? 'PASS' : 'FAIL'}  ${r.identity.padEnd(8)} ${r.theme.padEnd(13)} ${r.fg.padEnd(24)} on ${r.bg.padEnd(22)} ${r.ratio.toFixed(2)} (needs ${r.required})`;
+    `${r.pass ? 'PASS' : 'FAIL'}  ${r.designLanguage.padEnd(8)} ${r.theme.padEnd(13)} ${r.fg.padEnd(24)} on ${r.bg.padEnd(22)} ${r.ratio.toFixed(2)} (needs ${r.required})`;
   if (process.argv.includes('--verbose') || failed.length) for (const r of rows) console.log(line(r));
   if (failed.length) {
     console.error(`\ncontrast: ${failed.length} of ${rows.length} pairs below the bar`);
@@ -179,7 +179,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
 
   const distinct = await checkDistinct();
   const close = distinct.filter((r) => !r.pass);
-  const say = (r) => `${r.enforced ? 'FAIL' : 'note'}  ${r.identity.padEnd(8)} ${r.theme.padEnd(6)} ${r.a} / ${r.b} for ${r.sight}: ${r.distance.toFixed(1)} (needs ${DISTINCT_MIN})`;
+  const say = (r) => `${r.enforced ? 'FAIL' : 'note'}  ${r.designLanguage.padEnd(8)} ${r.theme.padEnd(6)} ${r.a} / ${r.b} for ${r.sight}: ${r.distance.toFixed(1)} (needs ${DISTINCT_MIN})`;
   for (const r of close) console.log(say(r));
   const blocking = close.filter((r) => r.enforced);
   if (blocking.length) {
@@ -187,5 +187,5 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
 color blindness: ${blocking.length} status pairs too close in an enforced language`);
     process.exit(1);
   }
-  console.log(`color blindness: ${distinct.length - close.length} of ${distinct.length} status pairs apart${close.length ? `; ${close.length} close in ${[...new Set(close.map((r) => r.identity))].join(', ')} (reported)` : ''}`);
+  console.log(`color blindness: ${distinct.length - close.length} of ${distinct.length} status pairs apart${close.length ? `; ${close.length} close in ${[...new Set(close.map((r) => r.designLanguage))].join(', ')} (reported)` : ''}`);
 }

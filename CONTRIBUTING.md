@@ -35,7 +35,7 @@ npm run e2e              # real-browser checks: a local Chrome and playwright-co
   `src/generated` are committed output, never edited by hand.
 - A stylesheet carries no literal value that a token has: a length, a colour or a duration is read from its `--mx-*`
   property.
-- Each design language (`data-identity`) is its own token set. A change to one language stays in its files and is
+- Each design language (`data-design-language`) is its own token set. A change to one language stays in its files and is
   looked at in the light and the dark theme, with the contrast check green.
 - A change visible to users gets a line in CHANGELOG.md under "Unreleased".
 - Write commit messages as a short summary line in the imperative ("Fix list reorder after splice"), with a body

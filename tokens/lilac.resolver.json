@@ -17,11 +17,11 @@
         }
       ]
     },
-    "identity": {
+    "designLanguage": {
       "description": "Lilac corner radii, elevation, type (Nunito Sans, Fraunces) and motion.",
       "sources": [
         {
-          "$ref": "identity/lilac/base.json"
+          "$ref": "design-language/lilac/base.json"
         }
       ]
     }
@@ -32,12 +32,12 @@
       "contexts": {
         "light": [
           {
-            "$ref": "identity/lilac/light.json"
+            "$ref": "design-language/lilac/light.json"
           }
         ],
         "dark": [
           {
-            "$ref": "identity/lilac/dark.json"
+            "$ref": "design-language/lilac/dark.json"
           }
         ]
       },
@@ -48,12 +48,12 @@
       "contexts": {
         "comfortable": [
           {
-            "$ref": "identity/lilac/density/comfortable.json"
+            "$ref": "design-language/lilac/density/comfortable.json"
           }
         ],
         "compact": [
           {
-            "$ref": "identity/lilac/density/compact.json"
+            "$ref": "design-language/lilac/density/compact.json"
           }
         ]
       },
@@ -65,7 +65,7 @@
       "$ref": "#/sets/primitive"
     },
     {
-      "$ref": "#/sets/identity"
+      "$ref": "#/sets/designLanguage"
     },
     {
       "$ref": "#/modifiers/theme"

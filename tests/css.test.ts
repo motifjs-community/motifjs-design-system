@@ -31,7 +31,7 @@ describe('hand-written CSS', () => {
       .filter((t) => t.$type === 'color' && layerOf(t) === 'semantic')
       .map((t) => `--${t.name}`);
     const forced = read('preferences.css').split('(forced-colors: active)')[1];
-    expect(forced).toContain('[data-identity] {');
+    expect(forced).toContain('[data-design-language] {');
     const mapped = new Set(declared(forced));
     for (const name of semanticColors) expect(mapped.has(name), `${name} has no forced-colors mapping`).toBe(true);
   });

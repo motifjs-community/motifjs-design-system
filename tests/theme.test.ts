@@ -34,13 +34,13 @@ const fakeMatchMedia = (matches: boolean) => {
 describe('theme helpers', () => {
   it('resolveTheme on a language that starts dark is dark under system, whatever the system prefers', () => {
     fakeMatchMedia(false);
-    root.setAttribute('data-identity', 'lounge');
+    root.setAttribute('data-design-language', 'lounge');
     expect(resolveTheme()).toBe('dark');
     const inner = document.createElement('div');
     root.append(inner);
     expect(resolveTheme(inner)).toBe('dark');
     inner.remove();
-    root.removeAttribute('data-identity');
+    root.removeAttribute('data-design-language');
     expect(resolveTheme()).toBe('light');
   });
 

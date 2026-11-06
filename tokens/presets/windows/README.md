@@ -1,12 +1,12 @@
 # Windows preset (not built yet)
 
-The token values the package shipped with before the Tactile identity: a token-for-token port of
+The token values the package shipped with before the Tactile designLanguage: a token-for-token port of
 Fluent 2 (Windows 11): the neutral grey ramp, the blue accent ramp, Segoe UI Variable and Cascadia
 Mono, the 2/4/8 px radii, and the semantic light and dark mappings that read them.
 
 Nothing here is part of the build. `build/tokens.mjs` reads only `tokens/primitive/*.json`,
 `tokens/semantic/<theme>.json` and `tokens/density/<density>.json`. The files are kept so a second
-identity can be offered later as an `identity` modifier in `mx.resolver.json` (contexts `tactile`,
+designLanguage can be offered later as an `designLanguage` modifier in `mx.resolver.json` (contexts `tactile`,
 the default, and `windows`), with the same semantic token names and the same contrast gate.
 
 Token names here may lag behind the main set: tokens added after the split (`color.bg.bar`,
