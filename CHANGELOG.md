@@ -7,6 +7,25 @@ renaming one is a breaking change and is announced one minor version ahead with 
 
 ## [Unreleased]
 
+## [0.1.0-beta.2] - 2026-11-06
+
+### Changed
+
+- Breaking: a design language is now called that everywhere, in code too. The attribute, the functions, the exports and
+  the file paths change; token names and their values do not.
+
+  | Before | Now |
+  |---|---|
+  | `data-identity` | `data-design-language` |
+  | `setIdentity()`, `getIdentity()` | `setDesignLanguage()`, `getDesignLanguage()` |
+  | `identities` | `designLanguages` |
+  | `defaultIdentity` | `defaultDesignLanguage` |
+  | `identityThemes` | `designLanguageThemes` |
+  | `IdentityName` | `DesignLanguageName` |
+  | `@motifx-community/design-system/identities/*.css` | `@motifx-community/design-system/design-languages/*.css` |
+  | the `identity` token layer | the `design-language` token layer |
+  | `tokens/identity/` | `tokens/design-language/` |
+
 ## [0.1.0-beta.1] - 2026-11-05
 
 ### Changed
