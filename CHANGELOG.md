@@ -7,6 +7,8 @@ renaming one is a breaking change and is announced one minor version ahead with 
 
 ## [Unreleased]
 
+## [0.1.0-beta.3] - 2026-11-07
+
 ### Added
 
 - Chart colors in every theme of every design language: `color.chart.series-1` to `series-8`, in a fixed order, and
