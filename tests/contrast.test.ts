@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { CONTRAST_PAIRS, DISTINCT_REPORTED, checkContrast, checkDistinct, checkSeries, contrastRatio, parseCssColor, seenDistance } from '../build/contrast.mjs';
+import { CONTRAST_PAIRS, DISTINCT_REPORTED, checkChartStatus, checkContrast, checkDistinct, checkSeries, contrastRatio, parseCssColor, seenDistance } from '../build/contrast.mjs';
 import { DESIGN_LANGUAGES } from '../build/tokens.mjs';
 
 describe('contrast gate', () => {
@@ -44,6 +44,11 @@ describe('contrast gate', () => {
 
   it('keeps neighboring chart colors apart for everyone, and each visible on every background', async () => {
     const failures = await checkSeries();
+    expect(failures.map((r) => `${r.designLanguage} ${r.theme} ${r.a} / ${r.b} ${r.what} ${r.value.toFixed(1)}`)).toEqual([]);
+  });
+
+  it('keeps the chart status colors apart for everyone, and each visible on every background', async () => {
+    const failures = await checkChartStatus();
     expect(failures.map((r) => `${r.designLanguage} ${r.theme} ${r.a} / ${r.b} ${r.what} ${r.value.toFixed(1)}`)).toEqual([]);
   });
 });

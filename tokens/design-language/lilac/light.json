@@ -424,6 +424,39 @@
           "hex": "#972b5f"
         }
       },
+      "good": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0863,
+            0.6471,
+            0.4314
+          ],
+          "hex": "#16a56e"
+        }
+      },
+      "warning": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7176,
+            0.5059,
+            0.0588
+          ],
+          "hex": "#b7810f"
+        }
+      },
+      "danger": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7294,
+            0.0118,
+            0.1608
+          ],
+          "hex": "#ba0329"
+        }
+      },
       "scale-low": {
         "$value": {
           "colorSpace": "srgb",

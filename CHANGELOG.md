@@ -14,6 +14,10 @@ renaming one is a breaking change and is announced one minor version ahead with 
   and `color.chart.grid` for the lines behind them.
   Each language opens with its own accent. The build checks that neighbors in the order stay apart for color-blind
   readers and that each color stays visible on every page background.
+- Status colors for data graphics: `color.chart.good`, `color.chart.warning` and `color.chart.danger`, for the ranges of
+  a gauge and other marks that say good or bad. A status's `solid` color is dark enough to carry white text, which
+  makes a mark look muddy; these are as clear as a mark can be while still showing on every background, warning stays
+  amber, and the build checks that the three stay apart for color-blind readers.
 
 ## [0.1.0-beta.2] - 2026-11-06
 

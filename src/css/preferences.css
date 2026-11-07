@@ -104,6 +104,9 @@
       --mx-color-chart-series-6: CanvasText;
       --mx-color-chart-series-7: CanvasText;
       --mx-color-chart-series-8: CanvasText;
+      --mx-color-chart-good: CanvasText;
+      --mx-color-chart-warning: CanvasText;
+      --mx-color-chart-danger: CanvasText;
       --mx-color-chart-scale-low: CanvasText;
       --mx-color-chart-scale-high: CanvasText;
       --mx-color-chart-scale-negative: CanvasText;

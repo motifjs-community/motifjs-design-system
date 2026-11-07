@@ -172,6 +172,36 @@ export async function checkSeries(designLanguages = Object.keys(DESIGN_LANGUAGES
   return failures;
 }
 
+/** The status colors of data graphics (a gauge's ranges): good, warning and danger. */
+export const CHART_STATUS = ['color.chart.good', 'color.chart.warning', 'color.chart.danger'];
+
+/**
+ * Status colors in a graphic sit side by side, so every two must stay apart, for anyone and for a color-blind reader, and
+ * each must show on every background. One row per failure per theme per language: { designLanguage, theme, a, b, what, value, required }.
+ */
+export async function checkChartStatus(designLanguages = Object.keys(DESIGN_LANGUAGES)) {
+  const failures = [];
+  for (const designLanguage of designLanguages) {
+    for (const theme of DESIGN_LANGUAGES[designLanguage].themes) {
+      const tokens = await resolvedTokens({ designLanguage, theme });
+      const byName = new Map(tokens.map((t) => [t.path.join('.'), t.$value]));
+      const report = (a, b, what, value, required) => {
+        if (value < required) failures.push({ designLanguage, theme, a, b, what, value, required });
+      };
+      const pairs = [[CHART_STATUS[0], CHART_STATUS[1]], [CHART_STATUS[1], CHART_STATUS[2]], [CHART_STATUS[0], CHART_STATUS[2]]];
+      for (const [a, b] of pairs) {
+        report(a, b, 'normal sight', seenDistance(byName.get(a), byName.get(b)), SERIES_MIN.normal);
+        for (const sight of Object.keys(SIGHT)) report(a, b, sight, seenDistance(byName.get(a), byName.get(b), sight), SERIES_MIN.seen);
+      }
+      const mark = theme === 'high-contrast' ? 7 : SERIES_MIN.mark;
+      for (const name of CHART_STATUS) {
+        for (const bg of SERIES_BACKGROUNDS) report(name, bg, 'contrast', contrastRatio(byName.get(name), byName.get(bg)), mark);
+      }
+    }
+  }
+  return failures;
+}
+
 /** One row per pair per theme per language: { designLanguage, theme, fg, bg, fgValue, bgValue, ratio, required, pass }. */
 export async function checkContrast(designLanguages = Object.keys(DESIGN_LANGUAGES)) {
   const rows = [];
@@ -233,4 +263,13 @@ chart colors: ${series.length} checks failed`);
     process.exit(1);
   }
   console.log('chart colors: every series stays apart, also for color-blind readers');
+
+  const status = await checkChartStatus();
+  for (const r of status) console.log(`FAIL  ${r.designLanguage.padEnd(8)} ${r.theme.padEnd(13)} ${r.a} / ${r.b} ${r.what}: ${r.value.toFixed(1)} (needs ${r.required})`);
+  if (status.length) {
+    console.error(`
+chart status colors: ${status.length} checks failed`);
+    process.exit(1);
+  }
+  console.log('chart status colors: good, warning and danger stay apart, also for color-blind readers');
 }
