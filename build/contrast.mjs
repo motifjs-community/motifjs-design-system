@@ -136,6 +136,42 @@ export async function checkDistinct(designLanguages = Object.keys(DESIGN_LANGUAG
   return rows;
 }
 
+/** The eight series colors of a chart, in order. */
+export const SERIES = Array.from({ length: 8 }, (_, i) => `color.chart.series-${i + 1}`);
+/** What a series color must keep: `seen` for a color-blind reader, `normal` for anyone, `mark` against a page's backgrounds. */
+export const SERIES_MIN = { seen: 8, normal: 15, mark: 3 };
+const SERIES_BACKGROUNDS = ['color.bg.canvas', 'color.bg.card', 'color.bg.surface'];
+
+/**
+ * Colors that touch in a chart are neighbors in the order, so these are the pairs that must stay apart. The first three
+ * must also stay apart from each other: they are what a scatter chart uses, where any two can meet.
+ * One row per failure per theme per language: { designLanguage, theme, a, b, what, value, required }.
+ */
+export async function checkSeries(designLanguages = Object.keys(DESIGN_LANGUAGES)) {
+  const failures = [];
+  for (const designLanguage of designLanguages) {
+    for (const theme of DESIGN_LANGUAGES[designLanguage].themes) {
+      const tokens = await resolvedTokens({ designLanguage, theme });
+      const byName = new Map(tokens.map((t) => [t.path.join('.'), t.$value]));
+      const pairs = SERIES.slice(1).map((name, i) => [SERIES[i], name]);
+      pairs.push([SERIES[0], SERIES[2]]);
+      const sights = theme === 'high-contrast' ? [] : Object.keys(SIGHT);
+      const report = (a, b, what, value, required) => {
+        if (value < required) failures.push({ designLanguage, theme, a, b, what, value, required });
+      };
+      for (const [a, b] of pairs) {
+        report(a, b, 'normal sight', seenDistance(byName.get(a), byName.get(b)), SERIES_MIN.normal);
+        for (const sight of sights) report(a, b, sight, seenDistance(byName.get(a), byName.get(b), sight), SERIES_MIN.seen);
+      }
+      const mark = theme === 'high-contrast' ? 7 : SERIES_MIN.mark;
+      for (const name of SERIES) {
+        for (const bg of SERIES_BACKGROUNDS) report(name, bg, 'contrast', contrastRatio(byName.get(name), byName.get(bg)), mark);
+      }
+    }
+  }
+  return failures;
+}
+
 /** One row per pair per theme per language: { designLanguage, theme, fg, bg, fgValue, bgValue, ratio, required, pass }. */
 export async function checkContrast(designLanguages = Object.keys(DESIGN_LANGUAGES)) {
   const rows = [];
@@ -188,4 +224,13 @@ color blindness: ${blocking.length} status pairs too close in an enforced langua
     process.exit(1);
   }
   console.log(`color blindness: ${distinct.length - close.length} of ${distinct.length} status pairs apart${close.length ? `; ${close.length} close in ${[...new Set(close.map((r) => r.designLanguage))].join(', ')} (reported)` : ''}`);
+
+  const series = await checkSeries();
+  for (const r of series) console.log(`FAIL  ${r.designLanguage.padEnd(8)} ${r.theme.padEnd(13)} ${r.a} / ${r.b} ${r.what}: ${r.value.toFixed(1)} (needs ${r.required})`);
+  if (series.length) {
+    console.error(`
+chart colors: ${series.length} checks failed`);
+    process.exit(1);
+  }
+  console.log('chart colors: every series stays apart, also for color-blind readers');
 }

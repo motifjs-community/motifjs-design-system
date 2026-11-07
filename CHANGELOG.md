@@ -7,6 +7,14 @@ renaming one is a breaking change and is announced one minor version ahead with 
 
 ## [Unreleased]
 
+### Added
+
+- Chart colors in every theme of every design language: `color.chart.series-1` to `series-8`, in a fixed order, and
+  `color.chart.scale-low`, `scale-high`, `scale-negative`, `scale-middle` and `scale-positive` for values on a scale,
+  and `color.chart.grid` for the lines behind them.
+  Each language opens with its own accent. The build checks that neighbors in the order stay apart for color-blind
+  readers and that each color stays visible on every page background.
+
 ## [0.1.0-beta.2] - 2026-11-06
 
 ### Changed
